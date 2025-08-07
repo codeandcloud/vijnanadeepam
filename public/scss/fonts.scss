@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Space+Grotesk:wght@300..700&display=swap");
+
+$font-weights: (
+  300: 300,
+  400: 400,
+  500: 500,
+  600: 600,
+  700: 700,
+);
+
+@mixin font-maker($font_name, $weight) {
+  font-family: $font_name, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: $weight;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+@each $name, $weight in $font-weights {
+  .open-sans-#{$name} {
+    @include font-maker("Open Sans", $weight);
+  }
+  .space-grotesk-#{$name} {
+    @include font-maker("Space Grotesk", $weight);
+  }
+}
+
+.open-sans-800 {
+  @include font-maker("Open Sans", 800);
+}

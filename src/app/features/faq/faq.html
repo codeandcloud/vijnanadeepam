@@ -1,0 +1,20 @@
+<div ngbAccordion
+     [closeOthers]="true">
+    @for (item of faqItems; ; track item.question; let idx = $index) {
+    <div ngbAccordionItem
+         [collapsed]="idx !== 0">
+        <h2 ngbAccordionHeader>
+            <button ngbAccordionButton>
+                {{ item.question }}
+            </button>
+        </h2>
+        <div ngbAccordionCollapse>
+            <div ngbAccordionBody>
+                <ng-template>
+                    {{ item.answer }}
+                </ng-template>
+            </div>
+        </div>
+    </div>
+    }
+</div>

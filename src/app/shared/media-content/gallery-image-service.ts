@@ -1,0 +1,26 @@
+import { Injectable } from '@angular/core';
+
+import { ContentService } from './content-service';
+import { imageAdapter } from '../../core/adapters/image-adapter';
+import { ApiResponse } from '../../interfaces/api-response.model';
+import { AppImage, DisplayImage } from '../../interfaces/app-image.model';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class GalleryImageService extends ContentService<
+  AppImage[],
+  DisplayImage[]
+> {
+  protected getEndpoint(): string {
+    return '/gallery-images';
+  }
+
+  protected getErrorMessage(): string {
+    return 'Failed to fetch images';
+  }
+
+  protected adaptResult(data: ApiResponse<AppImage[]>): DisplayImage[] {
+    return imageAdapter(data);
+  }
+}

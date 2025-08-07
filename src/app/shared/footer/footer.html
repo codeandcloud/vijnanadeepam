@@ -1,0 +1,60 @@
+<div class="container-fluid bg-dark text-white-50 footer pt-5">
+   <div class="container py-5">
+      <div class="row g-5">
+         <div class="col-md-6 col-lg-3">
+            <a routerLink="home"
+               class="d-inline-block mb-3">
+               <h1 class="text-white highlight">{{ app.title }}</h1>
+            </a>
+
+            <p class="mb-0">{{ description }}</p>
+         </div>
+         <div class="col-md-6 col-lg-3">
+            <h5 class="text-white mb-4">Get In Touch</h5>
+            <p><i class="bi bi-geo-alt-fill me-3"></i>123 Street, New York, USA</p>
+            <p><i class="bi bi-telephone-fill me-3"></i>+012 345 67890</p>
+            <p><i class="bi bi-envelope-fill me-3"></i>infoexample.com</p>
+            <div class="social-icons">
+               @for (link of socialLinks; track link.label) {
+               <a target="_blank"
+                  rel="noopener noreferrer"
+                  title="Go to Vijnanadeepam {{ link.label }} page"
+                  href="{{ link.url }}">
+                  <i class="bi {{ link.icon }}"
+                     title="{{ link.label }}"></i>
+               </a>
+               }
+            </div>
+         </div>
+         <div class="col-md-6 col-lg-3">
+            <h5 class="text-white mb-4">Popular Links</h5>
+            @for (item of popularLinks; track item.label) {
+            <a class="btn btn-link"
+               [routerLink]="item.link">
+               {{ item.label }}
+            </a>
+            }
+         </div>
+         <div class="col-md-6 col-lg-3">
+            <h5 class="text-white mb-4">Our Services</h5>
+            @for (item of services; track item.label) {
+            <a class="btn btn-link"
+               [routerLink]="item.link">
+               {{ item.label }}
+            </a>
+            }
+         </div>
+      </div>
+   </div>
+   <div class="copyright">
+      <p>
+         <a routerLink="&copy; {{ app.url }}">{{ app.title }}</a> {{ years }}. All Right Reserved.
+         <br class="d-block d-md-none">
+         Designed By <a target="_blank"
+            rel="noopener noreferrer"
+            href="{{ creator.url }}">
+            {{ creator.title }}
+         </a>
+      </p>
+   </div>
+</div>

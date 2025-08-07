@@ -1,0 +1,26 @@
+<div>
+    @if (youTubeVideos.status() === 'loading') {
+    <vd-placeholder [widthPx]="360"
+                    [heightPx]="200"></vd-placeholder>
+    } @else if (youTubeVideos.error()) {
+    <vd-error errorMessage="{{youTubeVideos.error()}}"></vd-error>
+    } @else if (youTubeVideos.content()) {
+    <div class="d-flex flex-wrap gap-4">
+        @let videos = youTubeVideos.content();
+        @for (video of videos; track video.id) {
+        <div title="{{ video.title }}"
+             class="d-flex flex-column justify-center">
+            <iframe [src]="getSafeEmbedUrl(video.id)"
+                    height="200"
+                    width="360"
+                    frameborder="0"
+                    title="{{ video.title }}"
+                    allowfullscreen></iframe>
+            <small class="youtube-title text-truncate">{{ video.title }}</small>
+        </div>
+        }
+    </div>
+    } @else {
+    <vd-empty emptyMessage="No video found"></vd-empty>
+    }
+</div>

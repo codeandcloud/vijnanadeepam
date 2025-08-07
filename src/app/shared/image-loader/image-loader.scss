@@ -1,0 +1,23 @@
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.loader-bg {
+  background-color: var(--site-body-bg);
+}
+
+.spinner-icon {
+  font-size: 2rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,24 @@
+@use "sass:map";
+
+$z-indices: (
+  base: 10,
+  toTop: 99,
+  header: 100,
+  popup: 200,
+  overlay: 1000,
+  modal: 1100,
+  toast: 2000,
+);
+
+@function getValue($key) {
+  @if not map.has-key($z-indices, $key) {
+    @warn "Undefined z-index key: #{$key}. Please define it in $z-indices map.";
+  }
+  @return map.get($z-indices, $key);
+}
+
+@each $zindex_name, $zindex_value in $z-indices {
+  .zindex-#{$zindex_name} {
+    z-index: $zindex_value;
+  }
+}

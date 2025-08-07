@@ -1,0 +1,30 @@
+@use "../../../../public/scss/z-indices.scss" as zMap;
+
+.back-to-top {
+  position: fixed;
+  display: grid;
+  right: 3rem;
+  bottom: 3rem;
+  z-index: zMap.getValue("toTop");
+
+  background-color: var(--bs-primary);
+  color: var(--bs-white);
+  transition: color 0.3s ease;
+
+  opacity: 0.85;
+
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+
+  place-items: center;
+  i {
+    font-size: 2rem;
+    font-weight: 800;
+  }
+}
+
+.back-to-top:hover {
+  background-color: var(--bs-dark);
+  opacity: 1;
+}

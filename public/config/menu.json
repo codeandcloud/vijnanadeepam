@@ -1,0 +1,39 @@
+[
+  { "label": "Home", "link": "/home" },
+  { "label": "About Us", "link": "/about-us" },
+  {
+    "label": "Team",
+    "children": [
+      { "label": "Administration", "link": "/administration" },
+      { "label": "Volunteers", "link": "/volunteers" }
+    ]
+  },
+  {
+    "label": "Activities",
+    "children": [
+      { "label": "Libraries", "link": "/libraries" },
+      { "label": "Channels", "link": "/channels" },
+      {
+        "label": "Projects and Programs",
+        "link": "/projects-and-programs"
+      },
+      { "label": "Scholarships", "link": "/scholarships" }
+    ]
+  },
+  {
+    "label": "Media",
+    "children": [
+      { "label": "Gallery", "link": "/gallery" },
+      { "label": "Videos", "link": "/videos" }
+    ]
+  },
+  {
+    "label": "Services",
+    "children": [
+      { "label": "Membership", "link": "/membership" },
+      { "label": "Orders and Circulars", "link": "/orders-and-circulars" }
+    ]
+  },
+  { "label": "FAQ", "link": "/faq" },
+  { "label": "Contact Us", "link": "/contact-us" }
+]

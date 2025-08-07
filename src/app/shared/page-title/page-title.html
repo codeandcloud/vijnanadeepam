@@ -1,0 +1,17 @@
+@let url = imageUrl();
+@let title = pageTitle();
+@if(url) {
+<section class="page-title jumbotron shadow-sm">
+     <h1 class="display-3">{{title}}</h1>
+     @if(!url) {
+     <p class="lead">{{pageDescription()}}</p>
+     }
+     @if(url) {
+     <img ngSrc="{{url}}"
+          alt="{{title}} Image"
+          height="300"
+          width="1920"
+          priority>
+     }
+</section>
+}

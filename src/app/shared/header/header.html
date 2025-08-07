@@ -1,0 +1,63 @@
+<header class="container-fluid sticky-top"
+        [class]="{ 'bg-white': isSticky(), 'shadow-sm': isSticky()}"
+        [style.top]="isSticky() ? '0px': '-150px'">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light border-bottom border-2 border-white">
+            <a class="navbar-brand"
+               routerLink="/home"
+               aria-label="Go to Home page">
+                {{title}}
+            </a>
+            <button class="navbar-toggler me-2"
+                    type="button"
+                    (click)="isMenuCollapsed = !isMenuCollapsed"
+                    aria-controls="mainNavbar"
+                    [attr.aria-expanded]="!isMenuCollapsed"
+                    aria-label="Toggle navigation">
+                <i class="bi bi-list"></i>
+            </button>
+            <div class="collapse navbar-collapse"
+                 id="mainNavbar"
+                 [(ngbCollapse)]="isMenuCollapsed">
+                <ul class="navbar-nav ms-auto">
+                    @for (item of menuItems; track item.label) {
+                    <li class="nav-item">
+                        @if(item.children) {
+                        <div ngbDropdown
+                             class="d-block">
+                            <a class="nav-link"
+                               id="dropdownBasic{{item.label}}"
+                               ngbDropdownToggle
+                               role="button"
+                               aria-haspopup="true"
+                               [attr.aria-expanded]="isMenuCollapsed ? 'false' : 'true'">
+                                {{ item.label }}
+                            </a>
+                            <div ngbDropdownMenu
+                                 attr.aria-labelledby="dropdownBasic{{item.label}}">
+                                @for (subItem of item.children; track subItem.label) {
+                                <a ngbDropdownItem
+                                   [routerLink]="subItem.link"
+                                   routerLinkActive="active"
+                                   (click)="isMenuCollapsed = true">
+                                    {{ subItem.label }}
+                                </a>
+                                }
+                            </div>
+                        </div>
+
+                        } @else {
+                        <a class="nav-link"
+                           [routerLink]="item.link"
+                           routerLinkActive="active"
+                           (click)="isMenuCollapsed = true">
+                            {{ item.label }}
+                        </a>
+                        }
+                    </li>
+                    }
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
