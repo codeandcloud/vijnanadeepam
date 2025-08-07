@@ -1,0 +1,1 @@
+import{Qb as a,Ya as t,vb as i,wb as o}from"./chunk-X4KK3PUE.js";var c=class e{static \u0275fac=function(s){return new(s||e)};static \u0275cmp=t({type:e,selectors:[["vd-scholarships"]],decls:2,vars:0,template:function(s,r){s&1&&(i(0,"p"),a(1,"scholarships works!"),o())},encapsulation:2})};export{c as Scholarships};

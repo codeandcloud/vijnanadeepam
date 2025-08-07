@@ -1,0 +1,1 @@
+var o=t=>{if(!t.data){let e=t.message||"No image data found";throw console.error(e),new Error(e)}return t.data.map(e=>({id:e.id,title:e.title,description:e.description,image:e.image}))};export{o as a};

@@ -1,0 +1,1 @@
+import{Qb as r,Ya as n,vb as o,wb as s}from"./chunk-X4KK3PUE.js";var a=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=n({type:t,selectors:[["vd-volunteers"]],decls:2,vars:0,template:function(e,i){e&1&&(o(0,"p"),r(1,"volunteers works!"),s())},encapsulation:2})};export{a as Volunteers};

@@ -1,0 +1,2 @@
+import './polyfills.server.mjs';
+import{Sb as n,Ya as s,xb as t,yb as a}from"./chunk-BDFQQ5CC.mjs";import"./chunk-T55IDOPT.mjs";var c=class r{static \u0275fac=function(e){return new(e||r)};static \u0275cmp=s({type:r,selectors:[["vd-orders-and-circulars"]],decls:2,vars:0,template:function(e,o){e&1&&(t(0,"p"),n(1,"orders-and-circulars works!"),a())},encapsulation:2})};export{c as OrdersAndCirculars};

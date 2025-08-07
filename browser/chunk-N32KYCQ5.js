@@ -1,0 +1,1 @@
+import{Qb as n,Ya as s,vb as t,wb as a}from"./chunk-X4KK3PUE.js";var c=class r{static \u0275fac=function(e){return new(e||r)};static \u0275cmp=s({type:r,selectors:[["vd-orders-and-circulars"]],decls:2,vars:0,template:function(e,o){e&1&&(t(0,"p"),n(1,"orders-and-circulars works!"),a())},encapsulation:2})};export{c as OrdersAndCirculars};

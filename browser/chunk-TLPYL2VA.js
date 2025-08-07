@@ -1,0 +1,1 @@
+import{Qb as r,Ya as s,vb as i,wb as m}from"./chunk-X4KK3PUE.js";var n=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=s({type:t,selectors:[["vd-membership"]],decls:2,vars:0,template:function(e,p){e&1&&(i(0,"p"),r(1,"membership works!"),m())},encapsulation:2})};export{n as Membership};
