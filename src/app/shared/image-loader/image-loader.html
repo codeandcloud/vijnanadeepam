@@ -3,20 +3,22 @@
 @let img = image();
 <div class="image-wrapper"
      [style.width.px]="width">
-    <img [src]="imageSrc()"
-         [style.width.px]="width"
-         (load)="onLoad()"
-         [class.d-none]="!isLoaded"
-         alt="{{ img.title }}"
-         title="{{img.title}}"
-         [attr.data-title]="img.title"
-         [attr.data-description]="img.description"
-         class="img-fluid" />
-    @if (!isLoaded) {
-    <div class="d-flex align-items-center justify-content-center loader-bg"
-         [style.width.px]="width"
-         [style.height.px]="height">
-        <i class="bi bi-gear-fill spinner-icon"></i>
-    </div>
-    }
+     <img [src]="img.image"
+          [style.height.px]="height"
+          [style.width.px]="width"
+          loading="lazy"
+          (load)="onLoad()"
+          [class.hidden]="!isLoaded"
+          alt="{{ img.title }}"
+          title="{{img.title}}"
+          [attr.data-title]="img.title"
+          [attr.data-description]="img.description"
+          [class]="computedClass()" />
+     @if (!isLoaded) {
+     <div class="flex items-center justify-center loader-bg"
+          [style.width.px]="width"
+          [style.height.px]="height">
+          <i class="fa-solid fa-spinner fa-spin text-primary text-xl"></i>
+     </div>
+     }
 </div>

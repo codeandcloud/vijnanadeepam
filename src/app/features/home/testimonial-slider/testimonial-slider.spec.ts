@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomeCarousel } from './home-carousel';
+import { TestimonialSlider } from './testimonial-slider';
 
-describe('HomeCarousel', () => {
-  let component: HomeCarousel;
-  let fixture: ComponentFixture<HomeCarousel>;
+describe('TestimonialSlider', () => {
+  let component: TestimonialSlider;
+  let fixture: ComponentFixture<TestimonialSlider>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HomeCarousel]
+      imports: [TestimonialSlider]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(HomeCarousel);
+    fixture = TestBed.createComponent(TestimonialSlider);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

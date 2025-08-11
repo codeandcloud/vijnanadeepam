@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @Component({
   selector: 'vd-faq',
-  imports: [NgbAccordionModule],
+  imports: [MatExpansionModule],
   templateUrl: './faq.html',
   styleUrl: './faq.scss',
 })

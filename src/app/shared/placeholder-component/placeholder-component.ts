@@ -1,5 +1,4 @@
 import { Component, input } from '@angular/core';
-import { create } from 'domain';
 import { createNumberArray } from '../../core/utils/array-utils';
 
 export type PlaceHolderType = '' | 'placeholder-glow' | 'placeholder-wave';

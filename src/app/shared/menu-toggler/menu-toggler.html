@@ -1,7 +1,7 @@
-<button class="btn btn-sm rounded-pill me-3 btn-contrast"
+<button mat-icon-button
+        matTooltip="Toggle dark and light theme"
         (click)="toggleTheme()"
-        [ngbTooltip]="'Toggle dark and light theme'"
         aria-label="Toggle dark and light theme">
-    <i class="bi {{ themeIcon() }}"
-       aria-hidden="true"></i>
+    <i class="fa-solid"
+       [class]="'fa-solid ' + themeIcon()"></i>
 </button>

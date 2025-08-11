@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
 import { DisplayImage } from '../../interfaces/app-image.model';
 
 @Component({
@@ -8,12 +8,17 @@ import { DisplayImage } from '../../interfaces/app-image.model';
   styleUrl: './image-loader.scss',
 })
 export class ImageLoader {
+  isLoaded = false;
+  defaultClass = 'block h-auto max-w-full';
+
   image = input.required<DisplayImage>();
-  imageSrc = input.required<string>();
   imageHeight = input<number>(200);
   imageWidth = input<number>(200);
+  imageClass = input<string>('');
 
-  isLoaded = false;
+  computedClass = computed(() => {
+    return `${this.defaultClass} ${this.imageClass()}`;
+  });
 
   onLoad() {
     this.isLoaded = true;

@@ -7,8 +7,8 @@
   bottom: 3rem;
   z-index: zMap.getValue("toTop");
 
-  background-color: var(--bs-primary);
-  color: var(--bs-white);
+  background-color: var(--vd-primary);
+  color: var(--vd-white);
   transition: color 0.3s ease;
 
   opacity: 0.85;
@@ -25,6 +25,6 @@
 }
 
 .back-to-top:hover {
-  background-color: var(--bs-dark);
+  background-color: var(--vd-dark);
   opacity: 1;
 }

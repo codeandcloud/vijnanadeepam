@@ -1,0 +1,15 @@
+@use "ngx-owl-carousel-o/lib/styles/scss/owl.carousel" as *;
+@use "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default" as *;
+
+.testimonial-carousel1 {
+  .owl-carousel {
+    .owl-stage {
+      display: flex;
+    }
+    .owl-item img {
+      width: auto; /* or 100% if needed */
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

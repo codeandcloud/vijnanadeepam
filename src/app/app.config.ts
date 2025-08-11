@@ -18,6 +18,7 @@ import {
 import { getPerformance, providePerformance } from '@angular/fire/performance';
 
 import { routes } from './app.routes';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 import { CustomTitleStrategy } from './core/services/custom-title-strategy';
 
@@ -28,6 +29,7 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),
     provideRouter(routes),
+    provideAnimations(),
     provideClientHydration(withEventReplay()),
     provideHttpClient(withFetch()),
     { provide: TitleStrategy, useClass: CustomTitleStrategy },

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 import { MenuItem } from '../../core/models/menu-item';
 import { SocialLink } from '../../core/models/social-link';
@@ -9,7 +10,7 @@ import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'vd-footer',
-  imports: [RouterLink],
+  imports: [CommonModule, RouterLink],
   templateUrl: './footer.html',
   styleUrls: ['./footer.scss'],
 })
@@ -18,7 +19,7 @@ export class Footer {
   protected app: SiteData = { ...environment.app };
 
   protected description =
-    '"Vijnanadeepam is a group in Kerala, India, composed of visually impaired individuals and volunteers. They create audiobooks by reading printed books aloud to provide reading materials and information for the visually challenged.';
+    'Vijnanadeepam is a group in Kerala, India, composed of visually impaired individuals and volunteers. They create audiobooks by reading printed books aloud to provide reading materials and information for the visually challenged.';
 
   protected years = `${this.app.startYear} - ${new Date().getFullYear()}`;
 
@@ -42,22 +43,22 @@ export class Footer {
     {
       label: 'Facebook',
       url: 'https://facebook.com/yourpage',
-      icon: 'bi-facebook',
+      icon: 'fa-facebook-f',
     },
     {
       label: 'Twitter',
       url: 'https://twitter.com/yourhandle',
-      icon: 'bi-twitter',
+      icon: 'fa-x-twitter',
     },
     {
       label: 'Instagram',
       url: 'https://instagram.com/yourprofile',
-      icon: 'bi-instagram',
+      icon: 'fa-instagram',
     },
     {
       label: 'YouTube',
       url: 'https://youtube.com/yourchannel',
-      icon: 'bi-youtube',
+      icon: 'fa-youtube',
     },
   ];
 }

@@ -1,8 +1,3 @@
-import {
-  EnvironmentInjector,
-  inject,
-  runInInjectionContext,
-} from '@angular/core';
 import { ApiResponse } from '../../interfaces/api-response.model';
 import { AppImage, DisplayImage } from '../../interfaces/app-image.model';
 

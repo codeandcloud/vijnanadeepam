@@ -1,60 +1,95 @@
-<div class="container-fluid bg-dark text-white-50 footer pt-5">
-   <div class="container py-5">
-      <div class="row g-5">
-         <div class="col-md-6 col-lg-3">
-            <a routerLink="home"
-               class="d-inline-block mb-3">
-               <h1 class="text-white highlight">{{ app.title }}</h1>
+<footer class="footer relative pt-16 text-neutral-300 modern-footer overflow-hidden">
+   <div class="absolute inset-0 bg-gradient-to-br from-cyan-950 via-cyan-900 to-teal-950 opacity-95"></div>
+   <div
+        class="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.07),transparent_60%)]">
+   </div>
+   <div class="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-cyan-500/60 to-transparent"></div>
+   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-14 md:grid-cols-2 lg:grid-cols-4 relative">
+         <!-- Brand / About -->
+         <div class="space-y-5 relative">
+            <a routerLink="/home"
+               class="inline-block group">
+               <h1
+                   class="text-white text-2xl font-bold tracking-tight transition group-hover:scale-[1.03] group-hover:drop-shadow">
+                  {{ app.title }}</h1>
             </a>
-
-            <p class="mb-0">{{ description }}</p>
+            <p class="text-sm leading-relaxed text-neutral-400 max-w-sm">{{ description }}</p>
          </div>
-         <div class="col-md-6 col-lg-3">
-            <h5 class="text-white mb-4">Get In Touch</h5>
-            <p><i class="bi bi-geo-alt-fill me-3"></i>123 Street, New York, USA</p>
-            <p><i class="bi bi-telephone-fill me-3"></i>+012 345 67890</p>
-            <p><i class="bi bi-envelope-fill me-3"></i>infoexample.com</p>
-            <div class="social-icons">
+
+         <!-- Get In Touch -->
+         <div class="space-y-5">
+            <h2 class="text-white text-sm font-semibold uppercase tracking-wide">Get In Touch</h2>
+            <ul class="space-y-2.5 text-sm">
+               <li class="flex gap-2 items-start">
+                  <span class="mt-0.5 text-neutral-500 group-hover:text-primary transition-colors"><i
+                        class="fa-solid fa-location-dot"></i></span>
+                  <span>123 Street, New York, USA</span>
+               </li>
+               <li class="flex gap-2 items-start">
+                  <span class="mt-0.5 text-neutral-500 group-hover:text-primary transition-colors"><i
+                        class="fa-solid fa-phone"></i></span>
+                  <span>+012 345 67890</span>
+               </li>
+               <li class="flex gap-2 items-start">
+                  <span class="mt-0.5 text-neutral-500 group-hover:text-primary transition-colors"><i
+                        class="fa-solid fa-envelope"></i></span>
+                  <span>info@example.com</span>
+               </li>
+            </ul>
+            <div class="flex gap-3 pt-2">
                @for (link of socialLinks; track link.label) {
-               <a target="_blank"
+               <a class="social-icon"
+                  target="_blank"
                   rel="noopener noreferrer"
-                  title="Go to Vijnanadeepam {{ link.label }} page"
-                  href="{{ link.url }}">
-                  <i class="bi {{ link.icon }}"
-                     title="{{ link.label }}"></i>
+                  [href]="link.url"
+                  [attr.aria-label]="link.label">
+                  <i class="fa-brands {{ link.icon }}"></i>
                </a>
                }
             </div>
          </div>
-         <div class="col-md-6 col-lg-3">
-            <h5 class="text-white mb-4">Popular Links</h5>
-            @for (item of popularLinks; track item.label) {
-            <a class="btn btn-link"
-               [routerLink]="item.link">
-               {{ item.label }}
-            </a>
-            }
+
+         <!-- Popular Links -->
+         <div class="relative">
+            <h2 class="text-white text-sm font-semibold uppercase tracking-wide mb-4">Popular Links</h2>
+            <ul class="space-y-2">
+               @for (item of popularLinks; track item.label) {
+               <li>
+                  <a [routerLink]="item.link"
+                     class="group footer-link inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition">
+                     <i class="fa-solid fa-chevron-right footer-chevron text-xs transition"></i>
+                     <span>{{ item.label }}</span>
+                  </a>
+               </li>
+               }
+            </ul>
          </div>
-         <div class="col-md-6 col-lg-3">
-            <h5 class="text-white mb-4">Our Services</h5>
-            @for (item of services; track item.label) {
-            <a class="btn btn-link"
-               [routerLink]="item.link">
-               {{ item.label }}
-            </a>
-            }
+
+         <!-- Services -->
+         <div class="relative">
+            <h2 class="text-white text-sm font-semibold uppercase tracking-wide mb-4">Our Services</h2>
+            <ul class="space-y-2">
+               @for (item of services; track item.label) {
+               <li>
+                  <a [routerLink]="item.link"
+                     class="group footer-link inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition">
+                     <i class="fa-solid fa-chevron-right footer-chevron text-xs transition"></i>
+                     <span>{{ item.label }}</span>
+                  </a>
+               </li>
+               }
+            </ul>
          </div>
       </div>
-   </div>
-   <div class="copyright">
-      <p>
-         <a routerLink="&copy; {{ app.url }}">{{ app.title }}</a> {{ years }}. All Right Reserved.
-         <br class="d-block d-md-none">
-         Designed By <a target="_blank"
+
+      <div class="text-center p-4">
+         <span>{{ app.title }}</span> &copy; {{ years }}. All Rights Reserved.
+         <br class="sm:hidden" />
+         Designed by <a target="_blank"
             rel="noopener noreferrer"
-            href="{{ creator.url }}">
-            {{ creator.title }}
-         </a>
-      </p>
+            [href]="creator.url">{{ creator.title }}</a>
+
+      </div>
    </div>
-</div>
+</footer>

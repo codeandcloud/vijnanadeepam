@@ -1,63 +1,75 @@
-<header class="container-fluid sticky-top"
-        [class]="{ 'bg-white': isSticky(), 'shadow-sm': isSticky()}"
-        [style.top]="isSticky() ? '0px': '-150px'">
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light border-bottom border-2 border-white">
-            <a class="navbar-brand"
-               routerLink="/home"
-               aria-label="Go to Home page">
-                {{title}}
-            </a>
-            <button class="navbar-toggler me-2"
-                    type="button"
-                    (click)="isMenuCollapsed = !isMenuCollapsed"
-                    aria-controls="mainNavbar"
-                    [attr.aria-expanded]="!isMenuCollapsed"
-                    aria-label="Toggle navigation">
-                <i class="bi bi-list"></i>
+<mat-toolbar color="primary"
+             class="sticky top-0 z-50 modern-header-solid">
+    <span class="font-semibold cursor-pointer select-none tracking-wide text-[15px]"
+          routerLink="/home"
+          aria-label="Go to Home page">{{title}}</span>
+    <span class="flex-1"></span>
+    <nav class="hidden lg:flex items-center gap-4">
+        @for (item of menuItems; track item.label) {
+        @if(item.children) {
+        <button mat-button
+                class="nav-link inline-flex items-center gap-1 menu-trigger"
+                [matMenuTriggerFor]="childMenu"
+                (menuOpened)="onMenuOpen(item.label)"
+                (menuClosed)="onMenuClose(item.label)">
+            <span class="order-0">{{item.label}}</span>
+            <mat-icon class="order-1 transition-transform duration-200 opacity-70 ml-1"
+                      [class.rotate-180]="currentOpenMenu() === item.label">expand_more</mat-icon>
+        </button>
+        <mat-menu #childMenu="matMenu">
+            @for(subItem of item.children; track subItem.label) {
+            <button mat-menu-item
+                    [routerLink]="subItem.link"
+                    routerLinkActive="active">
+                {{subItem.label}}</button>
+            }
+        </mat-menu>
+        } @else {
+        <button mat-button
+                class="nav-link"
+                [routerLink]="item.link"
+                routerLinkActive="active">{{item.label}}</button>
+        }
+        }
+    </nav>
+    <div class="flex items-center gap-1">
+        <button mat-icon-button
+                (click)="toggleTheme()"
+                [attr.aria-label]="isDark() ? 'Switch to light theme' : 'Switch to dark theme'">
+            <mat-icon>{{ isDark() ? 'light_mode' : 'dark_mode' }}</mat-icon>
+        </button>
+        <div class="sm:block lg:hidden">
+            <button mat-icon-button
+                    matTooltip="Toggle menu"
+                    #mobileMenuTrigger="matMenuTrigger"
+                    [matMenuTriggerFor]="mobileMenu">
+                <mat-icon>menu</mat-icon>
             </button>
-            <div class="collapse navbar-collapse"
-                 id="mainNavbar"
-                 [(ngbCollapse)]="isMenuCollapsed">
-                <ul class="navbar-nav ms-auto">
-                    @for (item of menuItems; track item.label) {
-                    <li class="nav-item">
-                        @if(item.children) {
-                        <div ngbDropdown
-                             class="d-block">
-                            <a class="nav-link"
-                               id="dropdownBasic{{item.label}}"
-                               ngbDropdownToggle
-                               role="button"
-                               aria-haspopup="true"
-                               [attr.aria-expanded]="isMenuCollapsed ? 'false' : 'true'">
-                                {{ item.label }}
-                            </a>
-                            <div ngbDropdownMenu
-                                 attr.aria-labelledby="dropdownBasic{{item.label}}">
-                                @for (subItem of item.children; track subItem.label) {
-                                <a ngbDropdownItem
-                                   [routerLink]="subItem.link"
-                                   routerLinkActive="active"
-                                   (click)="isMenuCollapsed = true">
-                                    {{ subItem.label }}
-                                </a>
-                                }
-                            </div>
-                        </div>
-
-                        } @else {
-                        <a class="nav-link"
-                           [routerLink]="item.link"
-                           routerLinkActive="active"
-                           (click)="isMenuCollapsed = true">
-                            {{ item.label }}
-                        </a>
-                        }
-                    </li>
-                    }
-                </ul>
-            </div>
-        </nav>
+        </div>
     </div>
-</header>
+</mat-toolbar>
+
+<mat-menu #mobileMenu="matMenu">
+    @for (item of menuItems; track item.label) {
+    @if(item.children) {
+    <div class="py-2">
+        <div class="text-sm font-semibold uppercase text-gray-600"
+             title="Sub Menu for {{item.label}}">
+            {{item.label}}
+        </div>
+        <div class="px-3">
+            @for(subItem of item.children; track subItem.label) {
+            <a mat-list-item
+               [routerLink]="subItem.link"
+               routerLinkActive="active">{{subItem.label}}</a>
+            }
+        </div>
+    </div>
+    } @else {
+    <a mat-list-item
+       class="text-sm font-semibold uppercase text-primary"
+       [routerLink]="item.link"
+       routerLinkActive="active">{{item.label}}</a>
+    }
+    }
+</mat-menu>

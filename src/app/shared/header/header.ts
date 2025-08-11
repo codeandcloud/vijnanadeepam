@@ -1,26 +1,28 @@
 import {
   afterNextRender,
+  ChangeDetectorRef,
   Component,
-  computed,
   inject,
   OnDestroy,
   OnInit,
   signal,
+  viewChild,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
-import {
-  NgbCollapse,
-  NgbDropdown,
-  NgbDropdownToggle,
-  NgbDropdownMenu,
-  NgbDropdownItem,
-} from '@ng-bootstrap/ng-bootstrap';
+import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule, MatMenuTrigger } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { SiteMenu } from '../../core/services/site-menu';
 import { MenuItem } from '../../core/models/menu-item';
+
 import { environment } from '../../../environments/environment';
+import { debounceTime, fromEvent, Subscription } from 'rxjs';
 
 @Component({
   selector: 'vd-header',
@@ -28,40 +30,42 @@ import { environment } from '../../../environments/environment';
     CommonModule,
     RouterLink,
     RouterLinkActive,
-    NgbCollapse,
-    NgbDropdown,
-    NgbDropdownToggle,
-    NgbDropdownMenu,
-    NgbDropdownItem,
+    MatButtonModule,
+    MatIconModule,
+    MatListModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatTooltipModule,
   ],
   templateUrl: './header.html',
   styleUrls: ['./header.scss'],
 })
 export class Header implements OnInit, OnDestroy {
+  readonly #MOBILE_MENU_BREAKPOINT = 1020;
   protected readonly title = environment.app.title;
 
   public isMenuCollapsed = true;
   private menuService = inject(SiteMenu);
   protected menuItems: MenuItem[] = [];
+  protected currentOpenMenu = signal<string | null>(null);
+  protected isDark = signal<boolean>(false);
 
-  private readonly scrollPosition = signal(0);
-  readonly isSticky = computed(() => this.scrollPosition() > 300);
+  private cdr = inject(ChangeDetectorRef);
 
-  private onScrollListener?: () => void;
+  #resizeSubscription: Subscription | null = null;
+
+  private trigger = viewChild<MatMenuTrigger>('mobileMenuTrigger');
 
   constructor() {
     afterNextRender(() => {
-      this.onScrollListener = () => {
-        this.scrollPosition.set(
-          window.pageYOffset ||
-            document.documentElement.scrollTop ||
-            document.body.scrollTop ||
-            0
-        );
-      };
-      window.addEventListener('scroll', this.onScrollListener, {
-        passive: true,
-      });
+      this.#resizeSubscription = fromEvent(window, 'resize')
+        .pipe(debounceTime(200))
+        .subscribe(() => {
+          const width = window.innerWidth;
+          if (width > this.#MOBILE_MENU_BREAKPOINT) {
+            this.trigger()?.closeMenu();
+          }
+        });
     });
   }
 
@@ -70,9 +74,7 @@ export class Header implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    if (this.onScrollListener) {
-      window.removeEventListener('scroll', this.onScrollListener);
-    }
+    this.#resizeSubscription?.unsubscribe();
   }
 
   #loadMenuItems = (): void => {
@@ -80,4 +82,18 @@ export class Header implements OnInit, OnDestroy {
       this.menuItems = items;
     });
   };
+
+  onMenuOpen(label: string) {
+    this.currentOpenMenu.set(label);
+  }
+  onMenuClose(label: string) {
+    if (this.currentOpenMenu() === label) this.currentOpenMenu.set(null);
+  }
+
+  toggleTheme() {
+    this.isDark.update((v) => !v);
+    const root = document.documentElement;
+    if (this.isDark()) root.classList.add('dark-theme');
+    else root.classList.remove('dark-theme');
+  }
 }

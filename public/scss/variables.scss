@@ -1,15 +1,18 @@
 :root {
-  --bs-primary: #0d6b68;
-  --bs-secondary: #555555;
-  --bs-success: #198754;
-  --bs-light: lab(94.04% -3.48 -0.68);
-  --bs-dark: #03201f;
+  --vd-primary: lab(40.57% -25.44 -5.56);
+  --vd-secondary: lab(36.15% 0 0);
+  --vd-success: lab(49.71% -42.06 19.21);
+  --vd-light: lab(94.04% -3.48 -0.68);
+  --vd-dark: lab(10.19% -11.11 -2.53);
+  --vd-accent: lab(72.04% 30.69 77.09);
+  --vd-warn: lab(55.6% 66.03 47.67);
+  --vd-white: lab(100% 0.01 -0.01);
 
-  --bs-primary-rgb: 13, 107, 104;
-  --bs-secondary-rgb: 85, 85, 85;
-  --bs-success-rgb: 25, 135, 84;
-  --bs-light-rgb: 230, 240, 239;
-  --bs-dark-rgb: 3, 32, 31;
+  --vd-primary-rgb: 13, 107, 104;
+  --vd-secondary-rgb: 85, 85, 85;
+  --vd-success-rgb: 25, 135, 84;
+  --vd-light-rgb: 230, 240, 239;
+  --vd-dark-rgb: 3, 32, 31;
 }
 
 // .dark-theme {

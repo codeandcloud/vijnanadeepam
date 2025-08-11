@@ -18,7 +18,8 @@ export abstract class ContentService<T, U> {
         return this.adaptResult(result);
       } catch (e) {
         console.error(e);
-        throw e;
+        // During SSR/prerender we must not throw, return a safe fallback instead.
+        return this.getFallback();
       }
     },
   });
@@ -27,6 +28,12 @@ export abstract class ContentService<T, U> {
   protected abstract getEndpoint(): string;
   protected abstract getErrorMessage(): string;
   protected abstract adaptResult(data: ApiResponse<T>): U;
+
+  // Default fallback to avoid SSR/prerender failures on network errors.
+  // Override in subclasses if a non-null default is preferred.
+  protected getFallback(): U {
+    return null as unknown as U;
+  }
 
   get content() {
     return this.contentResource.value;

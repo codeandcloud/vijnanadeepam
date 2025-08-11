@@ -1,34 +1,37 @@
-@use "bootstrap/scss/bootstrap";
-@use "bootstrap-icons/font/bootstrap-icons.css";
+@use "tailwindcss";
+
 @use "../public/scss/fonts";
 @use "../public/scss/variables";
 @use "../public/scss/animations";
+@use "../public/scss/angular-material-overrides";
+@use "../public/scss/owl-carousel";
 
-.btn {
-  transition: 0.5s;
+html,
+body {
+  min-height: 100%;
+  scroll-behavior: smooth;
 }
-
-.btn-square {
-  width: 38px;
-  height: 38px;
+body {
+  /* Light, airy cyan/teal tinted gradient background for all sections except hero */
+  background: radial-gradient(
+      circle at 85% 18%,
+      rgba(14, 116, 144, 0.18),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 12% 82%,
+      rgba(14, 116, 144, 0.14),
+      transparent 60%
+    ),
+    linear-gradient(135deg, #f7fbfc, #eaf6f8 55%, #e3f3f5);
+  background-color: #f2f8f9; /* solid fallback */
+  color: #073234;
+  overflow-x: hidden; /* prevent tiny horizontal scroll from full-bleed sections */
 }
-
-.btn-sm-square {
-  width: 32px;
-  height: 32px;
+.background-cover {
+  background-size: cover;
+  background-position: center;
 }
-
-.btn-lg-square {
-  width: 48px;
-  height: 48px;
-}
-
-.btn-square,
-.btn-sm-square,
-.btn-lg-square {
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: normal;
+.text-primary {
+  color: var(--vd-primary);
 }

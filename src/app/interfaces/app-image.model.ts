@@ -11,7 +11,8 @@ export interface AppImage {
 
 export interface DisplayImage {
   id: number;
-  description: string;
   image: string;
   title: string;
+  subTitle?: string;
+  description: string;
 }

@@ -1,20 +1,10 @@
-<div ngbAccordion
-     [closeOthers]="true">
-    @for (item of faqItems; ; track item.question; let idx = $index) {
-    <div ngbAccordionItem
-         [collapsed]="idx !== 0">
-        <h2 ngbAccordionHeader>
-            <button ngbAccordionButton>
-                {{ item.question }}
-            </button>
-        </h2>
-        <div ngbAccordionCollapse>
-            <div ngbAccordionBody>
-                <ng-template>
-                    {{ item.answer }}
-                </ng-template>
-            </div>
-        </div>
-    </div>
+<mat-accordion multi="false">
+    @for (item of faqItems; track item.question; let idx = $index) {
+    <mat-expansion-panel [expanded]="idx === 0">
+        <mat-expansion-panel-header>
+            <mat-panel-title>{{ item.question }}</mat-panel-title>
+        </mat-expansion-panel-header>
+        <p>{{ item.answer }}</p>
+    </mat-expansion-panel>
     }
-</div>
+</mat-accordion>
