@@ -1,0 +1,20 @@
+@let t = testimonial();
+<figure class="tsm-card bg-white rounded-lg overflow-hidden shadow-md p-8 h-[28rem] flex flex-col justify-between"
+        [attr.aria-labelledby]="'tsm-' + index() + '-name'">
+    <section class="tsm-avatar text-center h-40">
+        <vd-image-loader [image]="t"
+                         [imageWidth]="150"
+                         [imageHeight]="150"
+                         imageClass="rounded-full"></vd-image-loader>
+    </section>
+    <blockquote class="tsm-quote">
+        <p class="text-lg italic font-semibold my-4">“{{ t.description }}”</p>
+    </blockquote>
+    <figcaption class="tsm-meta">
+        <div class="tsm-name font-extrabold"
+             [id]="'tsm-' + index() + '-name'">
+            {{ t.title }}
+        </div>
+        <small class="tsm-role italic">{{ t.subTitle }}</small>
+    </figcaption>
+</figure>

@@ -5,10 +5,12 @@ import { ImageLoader } from '../../../shared/image-loader/image-loader';
 import { Testimonial } from '../../../interfaces/testimonial';
 import { delay, of } from 'rxjs';
 import { testimonialsToImagesAdapter } from '../../../core/adapters/testimonial-to-image.adapter';
+import { TestimonialFeature } from './testimonial-feature/testimonial-feature';
 
 @Component({
   selector: 'vd-testimonial-section',
-  imports: [CarouselModule, ImageLoader],
+  standalone: true,
+  imports: [CarouselModule, TestimonialFeature],
   templateUrl: './testimonial-section.html',
   styleUrl: './testimonial-section.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

@@ -1,11 +1,12 @@
+@let f = feature();
 <article class="group rounded-xl bg-white shadow-sm border border-cyan-700/15 p-6 outline-none transition hover:shadow-lg hover:border-cyan-700/35 focus-within:ring-2 focus-within:ring-cyan-600"
          tabindex="-1"
          [attr.aria-labelledby]="'feature-' + index() + '-title'">
     <div class="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-600 to-teal-600 text-white flex items-center justify-center text-xl shadow-[0_4px_10px_-2px_rgba(0,0,0,0.25)] mx-auto"
          aria-hidden="true">
-        <i class="fa-solid {{ feature().icon }}"></i>
+        <i class="fa-solid {{ f.icon }}"></i>
     </div>
     <h3 class="mt-4 text-center text-lg font-semibold text-cyan-900 group-hover:text-cyan-700"
-        [id]="'feature-' + index() + '-title'">{{ feature().title }}</h3>
-    <p class="mt-2 text-sm leading-relaxed text-cyan-800/80">{{ feature().description }}</p>
+        [id]="'feature-' + index() + '-title'">{{ f.title }}</h3>
+    <p class="mt-2 text-sm leading-relaxed text-cyan-800/80">{{ f.description }}</p>
 </article>
