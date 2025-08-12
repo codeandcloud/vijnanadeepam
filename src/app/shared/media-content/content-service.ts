@@ -1,6 +1,6 @@
 import { Injectable, resource } from '@angular/core';
 
-import { ApiResponse } from '../../interfaces/api-response.model';
+import { ApiResponse } from '../../interfaces/api-response';
 import { environment } from '../../../environments/environment';
 @Injectable({
   providedIn: 'root',

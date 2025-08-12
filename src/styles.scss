@@ -1,7 +1,6 @@
-@use "tailwindcss";
-
-@use "../public/scss/fonts";
+@use "../public/scss/tailwind";
 @use "../public/scss/variables";
+@use "../public/scss/fonts";
 @use "../public/scss/animations";
 @use "../public/scss/angular-material-overrides";
 @use "../public/scss/owl-carousel";
@@ -12,26 +11,20 @@ body {
   scroll-behavior: smooth;
 }
 body {
-  /* Light, airy cyan/teal tinted gradient background for all sections except hero */
-  background: radial-gradient(
-      circle at 85% 18%,
-      rgba(14, 116, 144, 0.18),
-      transparent 55%
-    ),
-    radial-gradient(
-      circle at 12% 82%,
-      rgba(14, 116, 144, 0.14),
-      transparent 60%
-    ),
-    linear-gradient(135deg, #f7fbfc, #eaf6f8 55%, #e3f3f5);
-  background-color: #f2f8f9; /* solid fallback */
-  color: #073234;
-  overflow-x: hidden; /* prevent tiny horizontal scroll from full-bleed sections */
+  background-color: var(--vd-surface);
+  color: var(--vd-on-surface);
+  overflow-x: hidden;
 }
-.background-cover {
-  background-size: cover;
-  background-position: center;
+
+.full-bleed {
+  position: relative !important;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw !important;
+  max-width: 100vw !important;
+  box-sizing: border-box;
 }
+
 .text-primary {
   color: var(--vd-primary);
 }

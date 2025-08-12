@@ -1,0 +1,16 @@
+<article class="h-full flex flex-col items-center text-center rounded-[14px] border border-white/10 bg-white/5 backdrop-saturate-[1.2] backdrop-blur-sm shadow-[0_2px_8px_rgba(0,0,0,0.18)] transition will-change-transform hover:-translate-y-1 hover:shadow-[0_10px_24px_rgba(0,0,0,0.22)] hover:border-white/20 p-5"
+         tabindex="-1"
+         [attr.aria-labelledby]="'whyus-' + index() + '-title'">
+    <div class="text-[#d1f7ff] opacity-90 mb-2.5"
+         aria-hidden="true">
+        <i class="fa {{ feature().icon }} fa-3x"></i>
+    </div>
+    <h3 class="text-white font-bold tracking-[.2px] mt-1 mb-2"
+        [id]="'whyus-' + index() + '-title'">
+        {{ feature().title }}
+    </h3>
+    <p class="text-[#b8ebf5] leading-relaxed m-0">
+        {{ feature().description }}
+    </p>
+
+</article>

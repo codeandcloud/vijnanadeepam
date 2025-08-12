@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
-import { MenuItem } from '../../core/models/menu-item';
-import { SocialLink } from '../../core/models/social-link';
-import { SiteData } from '../../core/models/site-data';
+import { MenuItem } from '../../interfaces/menu-item';
+import { SocialLink } from '../../interfaces/social-link';
+import { SiteData } from '../../interfaces/site-data';
 
 import { environment } from '../../../environments/environment';
 

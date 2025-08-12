@@ -1,5 +1,5 @@
-import { ApiResponse } from '../../interfaces/api-response.model';
-import { AppImage, DisplayImage } from '../../interfaces/app-image.model';
+import { ApiResponse } from '../../interfaces/api-response';
+import { AppImage, DisplayImage } from '../../interfaces/app-image';
 
 export const imageAdapter = (
   response: ApiResponse<AppImage[]>

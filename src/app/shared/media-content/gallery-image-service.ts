@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 
 import { ContentService } from './content-service';
 import { imageAdapter } from '../../core/adapters/image-adapter';
-import { ApiResponse } from '../../interfaces/api-response.model';
-import { AppImage, DisplayImage } from '../../interfaces/app-image.model';
+import { ApiResponse } from '../../interfaces/api-response';
+import { AppImage, DisplayImage } from '../../interfaces/app-image';
 import { environment } from '../../../environments/environment';
 
 @Injectable({

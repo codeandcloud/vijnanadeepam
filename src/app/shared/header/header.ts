@@ -19,7 +19,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { SiteMenu } from '../../core/services/site-menu';
-import { MenuItem } from '../../core/models/menu-item';
+import { MenuItem } from '../../interfaces/menu-item';
 
 import { environment } from '../../../environments/environment';
 import { debounceTime, fromEvent, Subscription } from 'rxjs';

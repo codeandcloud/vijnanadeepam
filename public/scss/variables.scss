@@ -13,7 +13,12 @@
   --vd-success-rgb: 25, 135, 84;
   --vd-light-rgb: 230, 240, 239;
   --vd-dark-rgb: 3, 32, 31;
+
+  --vd-surface: var(--vd-light);
+  --vd-on-surface: var(--vd-dark);
 }
 
-// .dark-theme {
-// }
+.dark-theme {
+  --vd-surface: var(--vd-dark);
+  --vd-on-surface: var(--vd-light);
+}

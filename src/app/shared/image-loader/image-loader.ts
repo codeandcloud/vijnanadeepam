@@ -1,5 +1,5 @@
 import { Component, computed, input } from '@angular/core';
-import { DisplayImage } from '../../interfaces/app-image.model';
+import { DisplayImage } from '../../interfaces/app-image';
 
 @Component({
   selector: 'vd-image-loader',

@@ -1,5 +1,5 @@
-import { Testimonial } from '../../interfaces/testimonial.model';
-import { DisplayImage } from '../../interfaces/app-image.model';
+import { Testimonial } from '../../interfaces/testimonial';
+import { DisplayImage } from '../../interfaces/app-image';
 
 export const testimonialToImageAdapter = (data: Testimonial): DisplayImage => {
   if (!data) {

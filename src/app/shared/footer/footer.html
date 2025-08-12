@@ -1,95 +1,84 @@
-<footer class="footer relative pt-16 text-neutral-300 modern-footer overflow-hidden">
-   <div class="absolute inset-0 bg-gradient-to-br from-cyan-950 via-cyan-900 to-teal-950 opacity-95"></div>
-   <div
-        class="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.07),transparent_60%)]">
-   </div>
-   <div class="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-cyan-500/60 to-transparent"></div>
-   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="grid gap-14 md:grid-cols-2 lg:grid-cols-4 relative">
-         <!-- Brand / About -->
-         <div class="space-y-5 relative">
-            <a routerLink="/home"
-               class="inline-block group">
-               <h1
-                   class="text-white text-2xl font-bold tracking-tight transition group-hover:scale-[1.03] group-hover:drop-shadow">
-                  {{ app.title }}</h1>
+<footer class="vd-footer">
+   <div class="footer w-full p-4 md:px-8 max-w-7xl mx-auto">
+      <section>
+         <h4>
+            {{ app.title }}
+         </h4>
+         <p>
+            {{ description }}
+         </p>
+
+      </section>
+      <section>
+         <h4>
+            Get In Touch
+         </h4>
+         <div class="footer-contact">
+            <p>
+               <i class="fa-solid fa-location-dot"></i>
+               <label>23 Street, New York, USA</label>
+            </p>
+            <p>
+               <i class="fa-solid fa-phone"></i>
+               <label>+012 345 67890</label>
+            </p>
+            <p>
+               <i class="fa-solid fa-envelope"></i>
+               <label>info@example.com</label>
+            </p>
+         </div>
+         <div class="footer-social">
+            @for (link of socialLinks; track link.label) {
+            <a target="_blank"
+               rel="noopener noreferrer"
+               [href]="link.url"
+               [attr.aria-label]="link.label">
+               <i class="fa-brands {{ link.icon }}"></i>
             </a>
-            <p class="text-sm leading-relaxed text-neutral-400 max-w-sm">{{ description }}</p>
+            }
          </div>
-
-         <!-- Get In Touch -->
-         <div class="space-y-5">
-            <h2 class="text-white text-sm font-semibold uppercase tracking-wide">Get In Touch</h2>
-            <ul class="space-y-2.5 text-sm">
-               <li class="flex gap-2 items-start">
-                  <span class="mt-0.5 text-neutral-500 group-hover:text-primary transition-colors"><i
-                        class="fa-solid fa-location-dot"></i></span>
-                  <span>123 Street, New York, USA</span>
-               </li>
-               <li class="flex gap-2 items-start">
-                  <span class="mt-0.5 text-neutral-500 group-hover:text-primary transition-colors"><i
-                        class="fa-solid fa-phone"></i></span>
-                  <span>+012 345 67890</span>
-               </li>
-               <li class="flex gap-2 items-start">
-                  <span class="mt-0.5 text-neutral-500 group-hover:text-primary transition-colors"><i
-                        class="fa-solid fa-envelope"></i></span>
-                  <span>info@example.com</span>
-               </li>
-            </ul>
-            <div class="flex gap-3 pt-2">
-               @for (link of socialLinks; track link.label) {
-               <a class="social-icon"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  [href]="link.url"
-                  [attr.aria-label]="link.label">
-                  <i class="fa-brands {{ link.icon }}"></i>
+      </section>
+      <section>
+         <h4>
+            Popular Links
+         </h4>
+         <ul role="navigation"
+             class="footer-links">
+            @for (item of popularLinks; track item.label) {
+            <li>
+               <a [routerLink]="item.link"
+                  class="footer-link">
+                  <i class="fa-solid fa-chevron-right footer-chevron"></i>
+                  {{ item.label }}
                </a>
-               }
-            </div>
-         </div>
+            </li>
+            }
+         </ul>
+      </section>
+      <section>
+         <h4>
+            Our Services
+         </h4>
+         <ul role="navigation"
+             class="footer-links">
+            @for (item of services; track item.label) {
+            <li>
+               <a [routerLink]="item.link"
+                  class="footer-link">
+                  <i class="fa-solid fa-chevron-right footer-chevron"></i>
+                  {{ item.label }}
+               </a>
+            </li>
+            }
+         </ul>
+      </section>
 
-         <!-- Popular Links -->
-         <div class="relative">
-            <h2 class="text-white text-sm font-semibold uppercase tracking-wide mb-4">Popular Links</h2>
-            <ul class="space-y-2">
-               @for (item of popularLinks; track item.label) {
-               <li>
-                  <a [routerLink]="item.link"
-                     class="group footer-link inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition">
-                     <i class="fa-solid fa-chevron-right footer-chevron text-xs transition"></i>
-                     <span>{{ item.label }}</span>
-                  </a>
-               </li>
-               }
-            </ul>
-         </div>
-
-         <!-- Services -->
-         <div class="relative">
-            <h2 class="text-white text-sm font-semibold uppercase tracking-wide mb-4">Our Services</h2>
-            <ul class="space-y-2">
-               @for (item of services; track item.label) {
-               <li>
-                  <a [routerLink]="item.link"
-                     class="group footer-link inline-flex items-center gap-2 text-sm text-neutral-400 hover:text-white transition">
-                     <i class="fa-solid fa-chevron-right footer-chevron text-xs transition"></i>
-                     <span>{{ item.label }}</span>
-                  </a>
-               </li>
-               }
-            </ul>
-         </div>
-      </div>
-
-      <div class="text-center p-4">
-         <span>{{ app.title }}</span> &copy; {{ years }}. All Rights Reserved.
-         <br class="sm:hidden" />
-         Designed by <a target="_blank"
-            rel="noopener noreferrer"
-            [href]="creator.url">{{ creator.title }}</a>
-
-      </div>
+   </div>
+   <div class="text-center pt-2">
+      <span>{{ app.title }}</span> &copy; {{ years }}. All Rights Reserved.
+      <br class="md:hidden" />
+      Designed by <a target="_blank"
+         rel="noopener noreferrer"
+         [href]="creator.url">{{ creator.title }}</a>
    </div>
 </footer>

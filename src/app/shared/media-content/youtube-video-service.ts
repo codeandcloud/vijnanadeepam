@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 
 import { ContentService } from './content-service';
 import { videoAdapter } from '../../core/adapters/video-adapter';
-import { ApiResponse } from '../../interfaces/api-response.model';
-import { AppVideo, DisplayVideo } from '../../interfaces/app-video.model';
+import { ApiResponse } from '../../interfaces/api-response';
+import { AppVideo, DisplayVideo } from '../../interfaces/app-video';
 
 @Injectable({
   providedIn: 'root',

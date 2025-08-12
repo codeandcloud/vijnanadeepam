@@ -1,5 +1,5 @@
-import { ApiResponse } from '../../interfaces/api-response.model';
-import { AppVideo, DisplayVideo } from '../../interfaces/app-video.model';
+import { ApiResponse } from '../../interfaces/api-response';
+import { AppVideo, DisplayVideo } from '../../interfaces/app-video';
 
 export const videoAdapter = (
   response: ApiResponse<AppVideo[]>

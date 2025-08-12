@@ -1,8 +1,10 @@
-@keyframes glow {
+@keyframes slide-in {
   from {
-    text-shadow: 0 0 10px var(bs-white);
+    opacity: 0.5;
+    transform: scale(1.05);
   }
   to {
-    text-shadow: 0 0 20px var(bs-white), 0 0 30px #ff00ff;
+    opacity: 1;
+    transform: scale(1);
   }
 }

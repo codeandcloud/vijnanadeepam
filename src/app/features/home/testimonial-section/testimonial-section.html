@@ -1,0 +1,36 @@
+@if (testimonials) {
+<section class="testimonial-SECTION">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center mb-10">
+            <h2 class="vd-subheading">What Our Users Say</h2>
+        </div>
+        <owl-carousel-o [options]="customOptions">
+            @for (testimonial of testimonials; track testimonial.title) {
+            {{testimonial.title}}
+            <ng-template carouselSlide>
+                <figure class="tsm-card"
+                        aria-label="Testimonial">
+                    <section class="tsm-avatar">
+                        <vd-image-loader [image]="testimonial"
+                                         [imageWidth]="150"
+                                         [imageHeight]="150"
+                                         imageClass="rounded-full"></vd-image-loader>
+                    </section>
+                    <blockquote class="tsm-quote">
+                        <p>“{{ testimonial.description }}”</p>
+                    </blockquote>
+                    <figcaption class="tsm-meta">
+                        <div class="tsm-name">{{ testimonial.title }}</div>
+                        <small class="tsm-role">{{ testimonial.subTitle }}</small>
+                    </figcaption>
+                </figure>
+            </ng-template>
+            }
+        </owl-carousel-o>
+    </div>
+</section>
+} @else {
+<div class="vd-subheading">
+    Loading testimonials…
+</div>
+}
