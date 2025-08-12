@@ -15,15 +15,18 @@
          </h4>
          <div class="footer-contact">
             <p>
-               <i class="fa-solid fa-location-dot"></i>
+               <span class="material-icons"
+                     aria-hidden="true">location_on</span>
                <label>23 Street, New York, USA</label>
             </p>
             <p>
-               <i class="fa-solid fa-phone"></i>
+               <span class="material-icons"
+                     aria-hidden="true">call</span>
                <label>+012 345 67890</label>
             </p>
             <p>
-               <i class="fa-solid fa-envelope"></i>
+               <span class="material-icons"
+                     aria-hidden="true">mail</span>
                <label>info@example.com</label>
             </p>
          </div>
@@ -32,8 +35,54 @@
             <a target="_blank"
                rel="noopener noreferrer"
                [href]="link.url"
-               [attr.aria-label]="link.label">
-               <i class="fa-brands {{ link.icon }}"></i>
+               [attr.aria-label]="link.label"
+               [attr.data-brand]="link.key">
+               @switch (link.key) {
+               @case ('facebook') {
+               <svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 256 256"
+                    fill="currentColor"
+                    aria-hidden="true"
+                    width="18"
+                    height="18">
+                  <path
+                        d="M241 128C241 65.3 190.7 15 128 15S15 65.3 15 128c0 56.4 41.2 103.1 95.3 111.9v-79.2H82.8V128h27.5v-18.8c0-27.1 16.1-42 40.8-42 11.8 0 24.2 2.1 24.2 2.1v26.6h-13.6c-13.4 0-17.6 8.3-17.6 16.9V128h30l-4.8 32.7h-25.2v79.2C199.8 231.1 241 184.4 241 128z" />
+               </svg>
+               }
+               @case ('x') {
+               <svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 1200 1227"
+                    fill="currentColor"
+                    aria-hidden="true"
+                    width="18"
+                    height="18">
+                  <path
+                        d="M714.163 519.284L1117.52 0H987.97L671.03 410.73 396.927 0H0l426.672 622.451L0 1226.84h129.555l339.044-430.864 292.48 430.864H1200L714.137 519.284h.026zM507.612 720.687l-39.271-57.106L176.57 94.833h170.25l252.271 366.9 39.271 57.106 308.36 448.85h-170.25L507.612 720.687z" />
+               </svg>
+               }
+               @case ('instagram') {
+               <svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"
+                    fill="currentColor"
+                    aria-hidden="true"
+                    width="18"
+                    height="18">
+                  <path
+                        d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9 114.9-51.3 114.9-114.9S287.7 141 224.1 141zm0 189.6c-41.2 0-74.7-33.4-74.7-74.7s33.4-74.7 74.7-74.7 74.7 33.4 74.7 74.7-33.4 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.9-26.9 26.9s-26.9-12-26.9-26.9 12-26.9 26.9-26.9 26.9 12 26.9 26.9zm76.1 27.2c-1.7-36.7-9.9-69.2-36.2-95.5S358.6 32 321.9 30.3c-36.7-2.1-146.8-2.1-183.5 0-36.7 1.7-69.2 9.9-95.5 36.2S32 153.4 30.3 190.1c-2.1 36.7-2.1 146.8 0 183.5 1.7 36.7 9.9 69.2 36.2 95.5s58.8 34.5 95.5 36.2c36.7 2.1 146.8 2.1 183.5 0 36.7-1.7 69.2-9.9 95.5-36.2s34.5-58.8 36.2-95.5c2.1-36.7 2.1-146.8 0-183.5zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+               </svg>
+               }
+               @case ('youtube') {
+               <svg xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 576 512"
+                    fill="currentColor"
+                    aria-hidden="true"
+                    width="18"
+                    height="18">
+                  <path
+                        d="M549.655 124.083c-6.281-23.652-24.787-42.276-48.289-48.597C458.781 64 288 64 288 64S117.22 64 74.634 75.486c-23.502 6.32-42.008 24.944-48.289 48.597-11.412 42.867-11.412 132.32-11.412 132.32s0 89.453 11.412 132.32c6.281 23.652 24.787 42.276 48.289 48.597C117.22 448 288 448 288 448s170.781 0 213.367-11.486c23.502-6.32 42.008-24.944 48.289-48.597 11.412-42.867 11.412-132.32 11.412-132.32s0-89.453-11.412-132.32zM232.09 338.59V173.41L361.82 256 232.09 338.59z" />
+               </svg>
+               }
+               }
             </a>
             }
          </div>
@@ -48,7 +97,8 @@
             <li>
                <a [routerLink]="item.link"
                   class="footer-link">
-                  <i class="fa-solid fa-chevron-right footer-chevron"></i>
+                  <span class="material-icons footer-chevron"
+                        aria-hidden="true">chevron_right</span>
                   {{ item.label }}
                </a>
             </li>
@@ -65,7 +115,8 @@
             <li>
                <a [routerLink]="item.link"
                   class="footer-link">
-                  <i class="fa-solid fa-chevron-right footer-chevron"></i>
+                  <span class="material-icons footer-chevron"
+                        aria-hidden="true">chevron_right</span>
                   {{ item.label }}
                </a>
             </li>

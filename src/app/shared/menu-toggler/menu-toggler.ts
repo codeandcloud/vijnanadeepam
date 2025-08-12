@@ -1,8 +1,7 @@
-import { NgClass } from '@angular/common';
 import { Component, computed, inject } from '@angular/core';
 import { ThemeService } from '../theme/theme-service';
 import { MatTooltipModule } from '@angular/material/tooltip';
-// Font Awesome icons used; MatIcon removed.
+// Using Material Icons font via index.html
 
 @Component({
   selector: 'vd-menu-toggler',
@@ -14,7 +13,7 @@ export class MenuToggler {
   private themeService = inject(ThemeService);
   protected currentTheme = this.themeService.theme;
   protected themeIcon = computed(() =>
-    this.themeService.theme() === 'light-theme' ? 'fa-sun' : 'fa-moon'
+    this.themeService.theme() === 'light-theme' ? 'light_mode' : 'dark_mode'
   );
   toggleTheme = (): void => {
     this.themeService.toggleTheme();

@@ -11,25 +11,25 @@ import { Feature } from '../../../interfaces/feature';
 export class WhatWeOfferSection {
   protected features: Feature[] = [
     {
-      icon: 'fa-ear-listen',
+      icon: 'headphones',
       title: 'Audio Library',
       description:
         'Curated narration of textbooks and reference material in clear, high‑quality audio.',
     },
     {
-      icon: 'fa-universal-access',
+      icon: 'accessibility_new',
       title: 'Accessible Lessons',
       description:
         'Structured learning resources designed with screen reader friendly semantics.',
     },
     {
-      icon: 'fa-people-group',
+      icon: 'groups',
       title: 'Community Support',
       description:
         'Peer and mentor interaction fostering confidence and collaborative growth.',
     },
     {
-      icon: 'fa-graduation-cap',
+      icon: 'school',
       title: 'Scholarships',
       description:
         'Guidance and assistance to connect learners with funding opportunities.',

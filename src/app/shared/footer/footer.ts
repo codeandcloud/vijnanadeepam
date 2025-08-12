@@ -43,22 +43,22 @@ export class Footer {
     {
       label: 'Facebook',
       url: 'https://facebook.com/yourpage',
-      icon: 'fa-facebook-f',
+      key: 'facebook',
     },
     {
       label: 'Twitter',
       url: 'https://twitter.com/yourhandle',
-      icon: 'fa-x-twitter',
+      key: 'x',
     },
     {
       label: 'Instagram',
       url: 'https://instagram.com/yourprofile',
-      icon: 'fa-instagram',
+      key: 'instagram',
     },
     {
       label: 'YouTube',
       url: 'https://youtube.com/yourchannel',
-      icon: 'fa-youtube',
+      key: 'youtube',
     },
   ];
 }

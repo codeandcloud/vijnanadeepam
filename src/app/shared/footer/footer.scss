@@ -1,4 +1,5 @@
 .footer {
+  font-family: "Space Grotesk", sans-serif;
   display: grid;
   grid-template-columns: repeat(4, minmax(13rem, 1fr));
   gap: 1rem;
@@ -6,7 +7,6 @@
     width: 13rem;
     > h4 {
       color: var(--vd-white);
-      font-family: "Space Grotesk", sans-serif;
       font-weight: 600;
       margin: 1rem 0;
       text-transform: uppercase;
@@ -49,17 +49,16 @@
           0 8px 24px rgba(0, 0, 0, 0.25);
         border-color: rgba(255, 255, 255, 0.55);
       }
-      i {
+      svg {
         transform: translateZ(0);
         transition: transform 0.25s ease;
       }
-      &:hover i {
+      &:hover svg {
         transform: scale(1.02);
       }
     }
   }
   .footer-contact {
-    font-family: "Space Grotesk", sans-serif;
     font-size: 0.85rem;
     p {
       margin-bottom: 0.675rem;
@@ -67,8 +66,10 @@
       &:hover {
         color: var(--vd-white);
       }
-      > i {
+      > .material-icons {
         margin-right: 0.5rem;
+        font-size: 1rem;
+        vertical-align: middle;
       }
     }
   }
@@ -83,6 +84,11 @@
       &:hover {
         color: var(--vd-white);
       }
+    }
+    .footer-chevron.material-icons {
+      font-size: 1rem;
+      vertical-align: text-bottom;
+      margin-right: 0.25rem;
     }
   }
 }

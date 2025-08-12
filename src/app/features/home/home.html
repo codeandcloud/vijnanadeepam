@@ -1,5 +1,22 @@
 <vd-hero-section></vd-hero-section>
 <vd-what-we-offer-section></vd-what-we-offer-section>
 <vd-why-us-section></vd-why-us-section>
+@defer (on viewport; prefetch on idle) {
 <vd-testimonial-section></vd-testimonial-section>
+} @placeholder {
+<section class="testimonial-section">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-center mb-10">
+            <h2 class="vd-subheading">What Our Users Say</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 opacity-70">
+            <div class="h-40 rounded-2xl bg-white/30 dark:bg-black/20 animate-pulse"></div>
+            <div class="h-40 rounded-2xl bg-white/30 dark:bg-black/20 animate-pulse hidden sm:block"></div>
+            <div class="h-40 rounded-2xl bg-white/30 dark:bg-black/20 animate-pulse hidden lg:block"></div>
+        </div>
+    </div>
+</section>
+} @loading {
+<div class="text-center py-8">Loading testimonials…</div>
+}
 <vd-call-to-action-section></vd-call-to-action-section>
