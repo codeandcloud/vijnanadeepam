@@ -1,9 +1,8 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit } from '@angular/core';
+import { of } from 'rxjs';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { DisplayImage } from '../../../interfaces/app-image';
-import { ImageLoader } from '../../../shared/image-loader/image-loader';
 import { Testimonial } from '../../../interfaces/testimonial';
-import { delay, of } from 'rxjs';
 import { testimonialsToImagesAdapter } from '../../../core/adapters/testimonial-to-image.adapter';
 import { TestimonialFeature } from './testimonial-feature/testimonial-feature';
 
@@ -81,10 +80,8 @@ export class TestimonialSection implements OnInit {
   }
 
   #getTestimonials() {
-    of(this.#mockTestimonials)
-      .pipe(delay(2000))
-      .subscribe((data) => {
-        this.testimonials = testimonialsToImagesAdapter(data);
-      });
+    of(this.#mockTestimonials).subscribe((data) => {
+      this.testimonials = testimonialsToImagesAdapter(data);
+    });
   }
 }
