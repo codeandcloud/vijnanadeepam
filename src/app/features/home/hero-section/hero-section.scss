@@ -20,18 +20,15 @@
 .hero-container {
   background-size: cover;
   background-position: center;
-  transition: background-image 1s ease-in-out;
+  transition: background-image 0.6s ease-out;
+  animation: fade-in-soft 3s ease-out both;
   > div {
     backdrop-filter: blur(0.25rem) brightness(0.5);
   }
 }
 
-.hero-container {
-  animation: slide-in 1s ease-in-out;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .hero a {
-    transition: none !important;
+  .hero-container {
+    animation: none !important;
   }
 }
