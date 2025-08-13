@@ -4,13 +4,13 @@ import {
   Component,
   inject,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { delay, of } from 'rxjs';
 import { PreloadService } from '../../../core/services/preload';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'vd-hero-section',
-  imports: [CommonModule],
+  imports: [RouterLink],
   templateUrl: './hero-section.html',
   styleUrl: './hero-section.scss',
 })

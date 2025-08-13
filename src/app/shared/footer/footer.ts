@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { CommonModule } from '@angular/common';
 
 import { MenuItem } from '../../interfaces/menu-item';
 import { SocialLink } from '../../interfaces/social-link';
@@ -10,7 +9,7 @@ import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'vd-footer',
-  imports: [CommonModule, RouterLink],
+  imports: [RouterLink],
   templateUrl: './footer.html',
   styleUrls: ['./footer.scss'],
 })

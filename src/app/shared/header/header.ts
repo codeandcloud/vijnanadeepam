@@ -8,7 +8,6 @@ import {
   signal,
   viewChild,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 import { MatButtonModule } from '@angular/material/button';
@@ -27,7 +26,6 @@ import { debounceTime, fromEvent, Subscription } from 'rxjs';
 @Component({
   selector: 'vd-header',
   imports: [
-    CommonModule,
     RouterLink,
     RouterLinkActive,
     MatButtonModule,
