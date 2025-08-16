@@ -1,0 +1,14 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="faqGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F0FFF8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#D8FFEE;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#faqGradient)"/>
+  <circle cx="900" cy="120" r="65" fill="#C8F0E8" opacity="0.6"/>
+  <circle cx="300" cy="510" r="55" fill="#9FEBDA" opacity="0.5"/>
+  <text x="600" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="#2C7F6F">Vijnanadeepam</text>
+  <text x="600" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" fill="#4A675F">FAQ</text>
+  <text x="600" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#5A7A72">Your Questions Answered</text>
+</svg>

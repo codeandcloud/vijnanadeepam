@@ -9,11 +9,14 @@ export const routes: Routes = [
     data: {
       meta: {
         description:
-          'Welcome to our home page, explore our services and offerings.',
-        keywords: 'home, services, welcome',
-        ogTitle: 'Home Page',
-        ogDescription: 'Discover our services and offerings on the home page.',
-        ogImage: '/assets/images/home-og.jpg',
+          'Vijnanadeepam is Kerala’s largest volunteer‑driven audio book library empowering visually impaired readers with accessible knowledge, culture, careers and community.',
+        keywords:
+          'vijnanadeepam, audio library kerala, visually impaired support, accessible books, talking books, volunteer readers, inclusive education',
+        ogTitle:
+          'Vijnanadeepam | Kerala’s Leading Audio Book & Accessibility Collective',
+        ogDescription:
+          'Discover India’s most vibrant volunteer network converting thousands of printed books into accessible audio for 900+ visually impaired beneficiaries across Kerala. Join, read, volunteer, empower.',
+        ogImage: '/og-images/home.jpg',
       },
     },
   },
@@ -24,11 +27,14 @@ export const routes: Routes = [
     title: 'About Us',
     data: {
       meta: {
-        description: 'Learn about our mission, vision, and team.',
-        keywords: 'about us, mission, vision, team',
-        ogTitle: 'About Us',
-        ogDescription: 'Find out more about our organization and team.',
-        ogImage: '/assets/images/about-og.jpg',
+        description:
+          'Learn how Vijnanadeepam unites visually impaired individuals and volunteers across Kerala to convert printed books into inclusive audio knowledge every day.',
+        keywords:
+          'vijnanadeepam mission, audio accessibility kerala, inclusive reading initiative, volunteer community, talking book project',
+        ogTitle: 'About Vijnanadeepam | Mission, Vision & Impact in Kerala',
+        ogDescription:
+          'From a small WhatsApp idea to Kerala’s largest audio book library—explore our mission, inclusive values, 400+ volunteers, 900+ beneficiaries and the growing movement for equitable reading access.',
+        ogImage: '/og-images/about.jpg',
       },
     },
   },
@@ -41,11 +47,15 @@ export const routes: Routes = [
     title: 'Administration',
     data: {
       meta: {
-        description: 'Meet our administration team.',
-        keywords: 'administration, team, leadership',
-        ogTitle: 'Administration Team',
-        ogDescription: 'Our dedicated administration team.',
-        ogImage: '/assets/images/admin-og.jpg',
+        description:
+          'Meet the dedicated Vijnanadeepam administration team coordinating volunteers, libraries, quality standards and accessible audio production across Kerala.',
+        keywords:
+          'vijnanadeepam administration, leadership team, accessibility management, audio library coordination, volunteer oversight',
+        ogTitle:
+          'Vijnanadeepam Administration | Coordinating Accessible Knowledge',
+        ogDescription:
+          'Get to know the leadership facilitating thousands of audio book recordings, decentralized library branches, compliance with copyright provisions and sustainable volunteer engagement.',
+        ogImage: '/og-images/admin.jpg',
       },
     },
   },
@@ -56,11 +66,14 @@ export const routes: Routes = [
     title: 'Volunteers',
     data: {
       meta: {
-        description: 'Discover our passionate volunteers.',
-        keywords: 'volunteers, community, support',
-        ogTitle: 'Our Volunteers',
-        ogDescription: 'Meet the volunteers who make a difference.',
-        ogImage: '/assets/images/volunteers-og.jpg',
+        description:
+          'Celebrate the 400+ Vijnanadeepam volunteers donating their voices to turn print into life‑changing audio for visually impaired readers across Kerala.',
+        keywords:
+          'volunteer audio readers, donate your voice kerala, accessible book narration, vijnanadeepam volunteers, inclusive service',
+        ogTitle: 'Volunteer Voices | Powering Vijnanadeepam’s Audio Library',
+        ogDescription:
+          'See how passionate narrators, editors and coordinators collectively craft thousands of accessible audio books—learn how you can start recording and impact inclusive literacy today.',
+        ogImage: '/og-images/volunteers.jpg',
       },
     },
   },
@@ -73,11 +86,14 @@ export const routes: Routes = [
     title: 'Libraries',
     data: {
       meta: {
-        description: 'Explore our library resources and services.',
-        keywords: 'libraries, resources, books',
-        ogTitle: 'Library Services',
-        ogDescription: 'Access our extensive library resources.',
-        ogImage: '/assets/images/libraries-og.jpg',
+        description:
+          'Explore Vijnanadeepam’s expanding network of Kerala audio library branches delivering localized accessible book collections to visually impaired learners.',
+        keywords:
+          'audio library branches kerala, regional accessible libraries, vijnanadeepam network, talking book access, inclusive reading hubs',
+        ogTitle: 'Audio Library Network | Regional Access Points in Kerala',
+        ogDescription:
+          'Learn how our decentralized branch model scales equitable access—curating academics, literature, competitive exams and cultural titles in high‑quality narrated formats.',
+        ogImage: '/og-images/libraries.jpg',
       },
     },
   },
@@ -88,11 +104,14 @@ export const routes: Routes = [
     title: 'Channels',
     data: {
       meta: {
-        description: 'Stay updated with our channels.',
-        keywords: 'channels, updates, news',
-        ogTitle: 'Our Channels',
-        ogDescription: 'Follow our latest updates and news.',
-        ogImage: '/assets/images/channels-og.jpg',
+        description:
+          'Stay updated through Vijnanadeepam’s Telegram and social channels sharing new audio books, services, initiatives and accessibility resources.',
+        keywords:
+          'vijnanadeepam telegram, accessibility updates kerala, audio book announcements, inclusive media channels',
+        ogTitle: 'Vijnanadeepam Channels | Latest Audio Releases & Updates',
+        ogDescription:
+          'Follow our curated announcements stream—new recordings, scholarship info, inclusive tech tips, volunteer drives and community development programs for visually impaired users.',
+        ogImage: '/og-images/svgs/channels.jpg',
       },
     },
   },
@@ -105,11 +124,14 @@ export const routes: Routes = [
     title: 'Scholarships',
     data: {
       meta: {
-        description: 'Learn about our scholarship programs.',
-        keywords: 'scholarships, education, funding',
-        ogTitle: 'Scholarship Programs',
-        ogDescription: 'Support for education through scholarships.',
-        ogImage: '/assets/images/scholarships-og.jpg',
+        description:
+          'Discover scholarships, educational aids and opportunities Vijnanadeepam highlights for visually impaired students pursuing academic and career goals in Kerala.',
+        keywords:
+          'visually impaired scholarships kerala, education support, accessible learning grants, vijnanadeepam education resources',
+        ogTitle: 'Scholarships & Educational Support | Vijnanadeepam',
+        ogDescription:
+          'Access curated funding leads, application guidance and empowerment programs connecting visually impaired learners with academic advancement and skill development pathways.',
+        ogImage: '/og-images/svgs/scholarships.jpg',
       },
     },
   },
@@ -120,11 +142,14 @@ export const routes: Routes = [
     title: 'Gallery',
     data: {
       meta: {
-        description: 'View our photo gallery.',
-        keywords: 'gallery, photos, events',
-        ogTitle: 'Photo Gallery',
-        ogDescription: 'Explore our collection of event photos.',
-        ogImage: '/assets/images/gallery-og.jpg',
+        description:
+          'Browse the Vijnanadeepam gallery showcasing community events, recording sessions, outreach, volunteer impact and inclusive literacy milestones.',
+        keywords:
+          'vijnanadeepam gallery, accessibility events, volunteer impact photos, inclusive literacy visuals',
+        ogTitle: 'Moments of Inclusion | Vijnanadeepam Photo Gallery',
+        ogDescription:
+          'A visual chronicle of how collective effort transforms print into accessible audio—celebrating volunteers, beneficiaries, workshops and the growth of Kerala’s largest talking book ecosystem.',
+        ogImage: '/og-images/gallery.jpg',
       },
     },
   },
@@ -135,11 +160,14 @@ export const routes: Routes = [
     title: 'Videos',
     data: {
       meta: {
-        description: 'Watch our latest videos.',
-        keywords: 'videos, media, content',
-        ogTitle: 'Video Content',
-        ogDescription: 'Check out our latest video content.',
-        ogImage: '/assets/images/videos-og.jpg',
+        description:
+          'Watch Vijnanadeepam videos featuring tutorials, awareness talks, inclusion campaigns, volunteer guidance and community impact stories from Kerala.',
+        keywords:
+          'accessibility videos kerala, vijnanadeepam tutorials, inclusive education media, volunteer training video',
+        ogTitle: 'Video Stories & Tutorials | Vijnanadeepam',
+        ogDescription:
+          'Stream educational explainers, empowerment narratives, reading technology demos and calls to action advancing accessible knowledge for visually impaired audiences.',
+        ogImage: '/og-images/svgs/videos.jpg',
       },
     },
   },
@@ -152,11 +180,14 @@ export const routes: Routes = [
     title: 'Membership',
     data: {
       meta: {
-        description: 'Join our membership program.',
-        keywords: 'membership, join, community',
-        ogTitle: 'Membership Program',
-        ogDescription: 'Become a part of our community.',
-        ogImage: '/assets/images/membership-og.jpg',
+        description:
+          'Join Vijnanadeepam membership to access curated audio books, community programs, updates and collaborative opportunities for inclusive growth.',
+        keywords:
+          'vijnanadeepam membership, join audio library, inclusive reading community, accessible books access',
+        ogTitle: 'Become a Member | Vijnanadeepam Accessible Audio Community',
+        ogDescription:
+          'Unlock structured access to recorded titles, contribution pathways, early updates and a supportive Kerala network focused on equitable reading transformation.',
+        ogImage: '/og-images/membership.jpg',
       },
     },
   },
@@ -171,12 +202,13 @@ export const routes: Routes = [
     data: {
       meta: {
         description:
-          'Orders and circulars related to the visually impaired community.',
-        keywords: 'orders, circulars, announcements',
-        ogTitle: 'Orders and Circulars',
+          'Access official orders, circulars and government notifications relevant to visually impaired rights, education and accessibility in Kerala.',
+        keywords:
+          'accessibility circulars kerala, government orders visually impaired, inclusion policy updates, vijnanadeepam references',
+        ogTitle: 'Orders & Circulars | Accessibility & Inclusion References',
         ogDescription:
-          'Stay informed with our latest orders and circularsrelated to the visually impaired community.',
-        ogImage: '/assets/images/orders-og.jpg',
+          'A curated repository simplifying discovery of policy updates, regulatory frameworks and institutional directives impacting visually impaired empowerment and services.',
+        ogImage: '/og-images/svgs/orders.jpg',
       },
     },
   },
@@ -186,11 +218,14 @@ export const routes: Routes = [
     title: 'FAQ',
     data: {
       meta: {
-        description: 'Find answers to frequently asked questions.',
-        keywords: 'faq, questions, help',
-        ogTitle: 'Frequently Asked Questions',
-        ogDescription: 'Get answers to common questions.',
-        ogImage: '/assets/images/faq-og.jpg',
+        description:
+          'Find clear answers about Vijnanadeepam audio books, volunteering, membership, accessibility practices, distribution and impact measurement.',
+        keywords:
+          'vijnanadeepam faq, how to volunteer audio, accessible book process, talking book compliance, membership questions',
+        ogTitle: 'Vijnanadeepam FAQ | Your Accessibility & Participation Guide',
+        ogDescription:
+          'Quickly understand how recording works, content sourcing, copyright compliance (2012 amendment), joining workflows, library access, technology and quality standards.',
+        ogImage: '/og-images/faq.jpg',
       },
     },
   },
@@ -201,11 +236,14 @@ export const routes: Routes = [
     title: 'Contact Us',
     data: {
       meta: {
-        description: 'Get in touch with us.',
-        keywords: 'contact, support, reach out',
-        ogTitle: 'Contact Us',
-        ogDescription: 'Reach out to our team for support.',
-        ogImage: '/assets/images/contact-og.jpg',
+        description:
+          'Contact Vijnanadeepam to volunteer, request accessible audio resources, partner on inclusion initiatives or support Kerala’s largest talking book library.',
+        keywords:
+          'contact vijnanadeepam, volunteer signup kerala, accessible library support, inclusion partnership',
+        ogTitle: 'Contact Vijnanadeepam | Partner, Volunteer or Request Access',
+        ogDescription:
+          'Reach our coordination team for collaboration, narration onboarding, library guidance, media queries, inclusion advocacy or beneficiary support pathways.',
+        ogImage: '/og-images/contact.jpg',
       },
     },
   },
@@ -216,11 +254,14 @@ export const routes: Routes = [
     title: 'Page Not Found',
     data: {
       meta: {
-        description: 'Page not found.',
-        keywords: '404, not found, error',
-        ogTitle: 'Page Not Found',
-        ogDescription: 'The page you are looking for does not exist.',
-        ogImage: '/assets/images/404-og.jpg',
+        description:
+          'Page not found — explore Vijnanadeepam’s accessible audio library, volunteer opportunities and inclusive resources instead.',
+        keywords:
+          'page not found, vijnanadeepam resources, audio library navigation',
+        ogTitle: 'Page Not Found | Explore Vijnanadeepam Resources',
+        ogDescription:
+          'The page you sought is missing—jump into our audio library network, community initiatives or membership pathways supporting visually impaired readers in Kerala.',
+        ogImage: '/og-images/404.jpg',
       },
     },
   },

@@ -2,7 +2,6 @@
 
 .back-to-top {
   position: fixed;
-  display: grid;
   right: 3rem;
   bottom: 3rem;
   z-index: zMap.getValue("toTop");
@@ -21,7 +20,9 @@
   border-radius: 50%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 
+  display: grid;
   place-items: center;
+  transition: opacity 0.5s ease;
   .material-icons {
     font-size: 1.5rem;
     font-weight: 800;

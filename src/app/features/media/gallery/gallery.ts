@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { MetaService } from '../../../core/services/meta-service';
 import { GalleryImageService } from '../../../shared/media-content/gallery-image-service';
 
 import { ImageLoader } from '../../../shared/image-loader/image-loader';
@@ -15,13 +14,7 @@ import { environment } from '../../../../environments/environment';
   styleUrl: './gallery.scss',
 })
 export class Gallery {
-  private pageTitle = 'Gallery';
   galleryImages = inject(GalleryImageService);
 
-  private metaService = inject(MetaService);
   protected storageUrl = environment.storageUrl;
-
-  ngOnInit(): void {
-    this.metaService.init();
-  }
 }

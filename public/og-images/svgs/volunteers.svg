@@ -1,0 +1,14 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="volunteersGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E8FFF0;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#B8FFD8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#volunteersGradient)"/>
+  <circle cx="180" cy="140" r="75" fill="#A7F0C8" opacity="0.6"/>
+  <circle cx="1020" cy="520" r="55" fill="#87EB9F" opacity="0.5"/>
+  <text x="600" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="#2C7F5F">Vijnanadeepam</text>
+  <text x="600" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" fill="#4A6756">Volunteer Voices</text>
+  <text x="600" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#5A7A6A">400+ Hearts Making a Difference</text>
+</svg>

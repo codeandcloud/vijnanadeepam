@@ -1,0 +1,15 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="videosGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8f8ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c8e8ff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#videosGrad)"/>
+  <circle cx="800" cy="180" r="70" fill="#90d8e8" opacity="0.8"/>
+  <circle cx="350" cy="450" r="50" fill="#70c8d8" opacity="0.7"/>
+  <circle cx="1050" cy="300" r="45" fill="#a0e0f0" opacity="0.6"/>
+  <text x="600" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="#2c5f7f">Vijnanadeepam</text>
+  <text x="600" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" fill="#4a6b7e">Video Stories</text>
+  <text x="600" y="420" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#5d7588">Tutorials &amp; Impact Stories</text>
+</svg>

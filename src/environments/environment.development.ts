@@ -6,6 +6,11 @@ export const environment = {
     startMonth: 'March',
     startYear: 2020,
   },
+  contact: {
+    email: 'admin@vijnanadeepam.org',
+    phone: '+91 884 832 7177',
+    altPhone: '+91 989 567 7447',
+  },
   creator: {
     title: 'Quantum Edge Labs Pvt. Ltd',
     url: 'https://qelabs.in',
