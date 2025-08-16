@@ -1,0 +1,45 @@
+User-agent: *
+Allow: /
+
+# Allow all search engines to crawl the site
+# Vijnanadeepam - Kerala's Leading Audio Book Library
+
+# Sitemap location
+Sitemap: https://vijnanadeepam.org/sitemap.xml
+
+# Crawl delay (optional - 1 second between requests)
+Crawl-delay: 1
+
+# Allow specific important pages
+Allow: /home
+Allow: /about-us
+Allow: /volunteers
+Allow: /libraries
+Allow: /gallery
+Allow: /videos
+Allow: /contact-us
+Allow: /faq
+Allow: /membership
+Allow: /scholarships
+Allow: /channels
+Allow: /orders-and-circulars
+Allow: /administration
+
+# Block unnecessary crawling of build artifacts and system files
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /*.map$
+Disallow: /chunk-*
+Disallow: /polyfills-*
+Disallow: /main-*
+Disallow: /runtime-*
+
+# Allow robots to access favicon and og images
+Allow: /favicon/
+Allow: /og-images/
+
+# Block any potential development or testing paths
+Disallow: /test/
+Disallow: /dev/
+Disallow: /_dev/
+Disallow: /staging/

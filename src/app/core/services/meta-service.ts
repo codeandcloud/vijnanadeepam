@@ -60,7 +60,6 @@ export class MetaService {
     this.meta.updateTag({ property: 'og:image', content: ogImage });
     this.meta.updateTag({ property: 'og:image:width', content: '1200' });
     this.meta.updateTag({ property: 'og:image:height', content: '630' });
-    this.meta.updateTag({ name: 'robots', content: 'index, follow' });
   }
 
   private getDeepestChild(

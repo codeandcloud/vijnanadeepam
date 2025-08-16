@@ -1,0 +1,59 @@
+# Vijnanadeepam - Kerala's Leading Audio Book Library
+
+## About
+Vijnanadeepam is a volunteer-driven community organization that converts printed books into accessible audio formats for visually impaired individuals in Kerala, India. Founded by Raouf Manikoth, the organization has grown from a small WhatsApp group to Kerala's largest talking book library.
+
+## Mission
+To empower visually challenged individuals by providing comprehensive access to knowledge, literature, and educational resources through volunteer-narrated audio books and inclusive community support.
+
+## Key Statistics
+- 900+ visually challenged beneficiaries
+- 400+ active volunteers
+- 5,000+ recorded audio books
+- Network of library branches across Kerala
+- Operating under Indian Copyright Act 2012 amendments
+
+## Services
+- Audio book library (all genres)
+- Educational support and scholarships
+- Volunteer coordination and training
+- Community outreach programs
+- Accessibility advocacy
+- Government orders and circulars repository
+
+## Technology Platform
+- Angular web application
+- Firebase integration
+- Telegram and WhatsApp channels
+- Audio content delivery system
+- Responsive design for accessibility
+
+## Target Audience
+- Visually impaired individuals in Kerala
+- Volunteers interested in accessibility work
+- Educational institutions
+- Government agencies
+- Accessibility advocates
+- General public interested in inclusive initiatives
+
+## Content Areas
+- Audio library resources
+- Volunteer opportunities
+- Educational scholarships
+- Community events and impact stories
+- Technical tutorials and guidance
+- Official announcements and circulars
+
+## Keywords
+vijnanadeepam, audio library, visually impaired, accessibility, Kerala, talking books, volunteer readers, inclusive education, community service, disability support, audio content, braille alternative
+
+## Contact
+Website: https://vijnanadeepam.org
+Telegram: Vijnanadeepam Audio Library
+Focus: Kerala, India
+
+## Legal Framework
+Operations comply with Indian Copyright Act 2012 amendments allowing free recording of books for visually impaired individuals without publisher permission.
+
+## Social Impact
+Transforming accessibility landscape in Kerala by connecting volunteer voices with visually impaired readers, creating an inclusive ecosystem for knowledge sharing and community empowerment.
