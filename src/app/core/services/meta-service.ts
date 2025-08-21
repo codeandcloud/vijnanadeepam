@@ -1,4 +1,3 @@
-// src/app/services/meta.service.ts
 import { Injectable } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRouteSnapshot, NavigationEnd, Router } from '@angular/router';
@@ -39,7 +38,7 @@ export class MetaService {
       'Vijnanadeepam is a new media collective that brings reading, knowledge, and entertainment within reach of the visually impaired. It is an online platform that comprehensively supports visually challenged individuals in Kerala across all domains. Our motto is, your voice, our knowledge.';
     const defaultKeyWords =
       'vijnanadeepam, audio, library, blind, people, books, knowledge, volunteers';
-    const defaultOgImage = '/og-images/home.svg';
+    const defaultOgImage = '/og-images/home.jpg';
 
     if (!metaData) return;
 
