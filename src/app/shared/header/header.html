@@ -1,80 +1,97 @@
-<mat-toolbar color="primary"
-             class="sticky top-0 z-50 modern-header-solid">
-    <span class="text-[1.2rem] font-semibold uppercase cursor-pointer select-none tracking-wide text-[15px]"
-          routerLink="/home"
-          aria-label="Go to Home page">{{title}}</span>
-    <span class="flex-1"></span>
-    <nav class="hidden lg:flex items-center gap-4">
-        @for (item of menuItems; track item.label) {
-        @if(item.children) {
-        <button mat-button
-                class="nav-link inline-flex items-center gap-1 menu-trigger"
-                [matMenuTriggerFor]="childMenu"
-                (menuOpened)="onMenuOpen(item.label)"
-                (menuClosed)="onMenuClose(item.label)">
-            <span class="order-0">{{item.label}}</span>
-            <mat-icon class="order-1 transition-transform duration-200 opacity-70 ml-1"
-                      [class.rotate-180]="currentOpenMenu() === item.label">expand_more</mat-icon>
-        </button>
-        <mat-menu #childMenu="matMenu">
-            @for(subItem of item.children; track subItem.label) {
-            <button mat-menu-item
-                    [routerLink]="subItem.link"
-                    routerLinkActive="active">
-                {{subItem.label}}</button>
-            }
-        </mat-menu>
-        } @else {
-        <button mat-button
-                class="nav-link"
-                [routerLink]="item.link"
-                routerLinkActive="active">
-            <span class="vd-submenu">{{item.label}}</span>
-        </button>
-        }
-        }
-    </nav>
-    <div class="flex items-center gap-1">
-        <!-- <button mat-icon-button
-                (click)="toggleTheme()"
-                [attr.aria-label]="isDark() ? 'Switch to light theme' : 'Switch to dark theme'">
-            <mat-icon>{{ isDark() ? 'light_mode' : 'dark_mode' }}</mat-icon>
-        </button> -->
-        <div class="sm:block lg:hidden">
-            <button mat-icon-button="Toggle menu"
-                    #mobileMenuTrigger="matMenuTrigger"
-                    [matMenuTriggerFor]="mobileMenu">
-                <mat-icon>menu</mat-icon>
-            </button>
-        </div>
-    </div>
-</mat-toolbar>
+<header class="max-w-7xl mx-auto header shadow-lg playfair-display-600">
+    <div class="flex items-center justify-between h-12">
+        <h1 class="header-title">
+            <a routerLink="/home"
+               aria-label="Vijnanadeepam home">
+                <span aria-hidden="true">{{title}}</span>
+            </a>
+        </h1>
 
-<mat-menu #mobileMenu="matMenu">
-    @for (item of menuItems; track item.label) {
-    @if(item.children) {
-    <div class="py-2">
-        <div class="text-sm uppercase text-gray-600"
-             title="Sub Menu for {{item.label}}">
-            {{item.label}}
-        </div>
-        <div class="px-3">
-            @for(subItem of item.children; track subItem.label) {
-            <a mat-list-item
-               [routerLink]="subItem.link"
-               routerLinkActive="active">
-                <span class="vd-submenu">
-                    {{subItem.label}}
-                </span>
+        <nav class="hidden lg:flex items-center gap-2">
+            @for (item of menuItems; track item.label) {
+            @if(item.children) {
+            <div class="nav-menu">
+                <button class="nav-link"
+                        type="button"
+                        (click)="toggleDropdown(item.label)">
+                    <span>{{item.label}}</span>
+                    <i class="fas fa-chevron-down ms-2 text-sm transition-transform"
+                       [class.rotate-180]="currentOpenMenu() === item.label"></i>
+                </button>
+                <div class="nav-submenu shadow-lg"
+                     [class.opacity-0]="currentOpenMenu() !== item.label"
+                     [class.opacity-100]="currentOpenMenu() === item.label"
+                     [class.invisible]="currentOpenMenu() !== item.label"
+                     [class.visible]="currentOpenMenu() === item.label">
+                    @for(subItem of item.children; track subItem.label) {
+                    <a [routerLink]="subItem.link"
+                       routerLinkActive="active"
+                       (click)="closeDropdown()"
+                       class="nav-link">
+                        {{subItem.label}}
+                    </a>
+                    }
+                </div>
+            </div>
+            } @else {
+            <a [routerLink]="item.link"
+               routerLinkActive="active"
+               class="nav-link">
+                {{item.label}}
             </a>
             }
+            }
+        </nav>
+        <div class="flex items-center gap-2">
+            <!-- Mobile Menu Button -->
+            <div class="lg:hidden">
+                <button (click)="toggleMobileMenu()"
+                        aria-label="Toggle menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <!-- Theme Toggle Button -->
+            <vd-menu-toggler></vd-menu-toggler>
         </div>
     </div>
-    } @else {
-    <a mat-list-item
-       class="text-sm font uppercase text-primary"
-       [routerLink]="item.link"
-       routerLinkActive="active">{{item.label}}</a>
-    }
-    }
-</mat-menu>
+
+    <!-- Mobile Navigation Menu -->
+    <div class="lg:hidden"
+         [class.hidden]="!isMobileMenuOpen">
+        <nav class="mobile-menu">
+            @for (item of menuItems; track item.label) {
+            @if(item.children) {
+            <!-- Mobile Dropdown Section -->
+            <div class="py-2">
+                <div class="text-gray-600">
+                    {{item.label}}
+                </div>
+                <div class="pl-4 space-y-1">
+                    @for(subItem of item.children; track subItem.label) {
+                    <a [routerLink]="subItem.link"
+                       routerLinkActive="active"
+                       (click)="closeMobileMenu()"
+                       class="nav-link">
+                        {{subItem.label}}
+                    </a>
+                    }
+                </div>
+            </div>
+            } @else {
+            <a [routerLink]="item.link"
+               routerLinkActive="active"
+               (click)="closeMobileMenu()"
+               class="nav-link">
+                {{item.label}}
+            </a>
+            }
+            }
+
+            <!-- Theme Toggle in Mobile Menu -->
+            <div class="py-2 border-t border-gray-200 mt-2">
+                <vd-menu-toggler></vd-menu-toggler>
+            </div>
+        </nav>
+    </div>
+</header>

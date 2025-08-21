@@ -5,7 +5,7 @@
   gap: 1rem;
   > section {
     width: 13rem;
-    > h4 {
+    > h2 {
       color: var(--vd-white);
       font-weight: 600;
       margin: 1rem 0;
@@ -38,7 +38,7 @@
       -webkit-tap-highlight-color: transparent;
       &:hover {
         background-color: rgba(255, 255, 255, 0.96);
-        color: var(--vd-primary);
+        color: var(--primary);
         border-color: rgba(255, 255, 255, 0.45);
         transform: translateY(-2px) scale(1.06);
         box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
@@ -66,7 +66,7 @@
       &:hover {
         color: var(--vd-white);
       }
-      > .material-icons {
+      > i {
         margin-right: 0.5rem;
         font-size: 1rem;
         vertical-align: middle;
@@ -85,7 +85,7 @@
         color: var(--vd-white);
       }
     }
-    .footer-chevron.material-icons {
+    .footer-chevron {
       font-size: 1rem;
       vertical-align: text-bottom;
       margin-right: 0.25rem;

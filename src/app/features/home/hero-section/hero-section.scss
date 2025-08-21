@@ -1,34 +1,90 @@
 .hero {
   position: relative;
-  min-height: clamp(560px, 70vh, 820px);
-  width: 100%;
+
   display: flex;
   align-items: stretch;
-  isolation: isolate;
-  background-blend-mode: overlay, normal, normal;
-  color: var(--vd-white);
-  overflow: hidden;
 
-  h1 {
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  }
-  p {
-    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-  }
-}
+  min-height: clamp(560px, 70vh, 820px);
+  width: 100%;
 
-.hero-container {
   background-size: cover;
   background-position: center;
   transition: background-image 0.6s ease-out;
-  animation: fade-in-soft 3s ease-out both;
-  > div {
-    backdrop-filter: blur(0.25rem) brightness(0.5);
+  animation: fade-in-soft var(--default-transition-duration)
+    var(--default-transition-timing-function) both;
+  .hero-overlay {
+    background-color: var(--primary);
+    opacity: 0.6;
+    backdrop-filter: brightness(0.5) blur(0.25rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    .hero-data {
+      text-align: center;
+      margin-inline: auto;
+      max-width: 64rem;
+      padding-inline: 1rem;
+      * {
+        color: var(--vd-white);
+      }
+      h1 {
+        font-size: 4.5rem;
+        font-weight: 700;
+      }
+      p {
+        margin-top: 1.5rem;
+        font-size: 1.5rem;
+      }
+      a {
+        display: inline-flex;
+        align-items: center;
+        background-color: var(--vd-white);
+        border-radius: 0.5rem;
+        margin-block: 1rem;
+        padding: 0.75rem 1.5rem;
+        text-decoration: none;
+        * {
+          color: var(--primary);
+        }
+      }
+    }
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .hero-container {
-    animation: none !important;
+// md
+@media (min-width: 767.98px) and (max-width: 992px) {
+  .hero-container .hero-overlay .hero-data {
+    h1 {
+      font-size: 3rem;
+    }
+    p {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+// sm
+@media (max-width: 768px) {
+  .hero-container .hero-overlay .hero-data {
+    h1 {
+      font-size: 2.25rem;
+    }
+    p {
+      font-size: 1.125rem;
+    }
+    a {
+      display: inline-flex;
+    }
   }
 }

@@ -6,7 +6,7 @@
   bottom: 3rem;
   z-index: zMap.getValue("toTop");
 
-  background-color: var(--vd-primary);
+  background-color: var(--primary);
   color: var(--vd-white);
   transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease,
     box-shadow 0.2s ease;
@@ -23,7 +23,7 @@
   display: grid;
   place-items: center;
   transition: opacity 0.5s ease;
-  .material-icons {
+  i {
     font-size: 1.5rem;
     font-weight: 800;
     line-height: 1;

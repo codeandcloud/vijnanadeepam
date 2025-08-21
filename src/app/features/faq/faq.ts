@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
-import { MatExpansionModule } from '@angular/material/expansion';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'vd-faq',
-  imports: [MatExpansionModule],
+  imports: [CommonModule],
   templateUrl: './faq.html',
   styleUrl: './faq.scss',
 })
 export class Faq {
+  public expandedIndex: number | null = 0; // First item expanded by default
+
   public faqItems = [
     {
       question: `What is Vijnanadeepam?`,
@@ -54,4 +56,12 @@ export class Faq {
       answer: `This scheme provides scholarships to visually impaired school children in Kerala who excel academically and are economically disadvantaged, funded by the Punnyam Charitable Organization, and awarded based on written examinations and interviews.`,
     },
   ];
+
+  toggleExpansion(index: number): void {
+    this.expandedIndex = this.expandedIndex === index ? null : index;
+  }
+
+  isExpanded(index: number): boolean {
+    return this.expandedIndex === index;
+  }
 }

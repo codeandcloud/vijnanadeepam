@@ -12,37 +12,37 @@ import { Feature } from '../../../interfaces/feature';
 export class WhyUsSection {
   protected features: Feature[] = [
     {
-      icon: 'event',
+      icon: 'calendar-week',
       title: '25+ Years Experience',
       description:
         'Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore erat amet',
     },
     {
-      icon: 'checklist',
+      icon: 'list-check',
       title: 'Best Interior Design',
       description:
         'Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore erat amet',
     },
     {
-      icon: 'design_services',
+      icon: 'pen-ruler',
       title: 'Innovative Architects',
       description:
         'Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore erat amet',
     },
     {
-      icon: 'person',
+      icon: 'user',
       title: 'Customer Satisfaction',
       description:
         'Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore erat amet',
     },
     {
-      icon: 'savings',
+      icon: 'piggy-bank',
       title: 'Budget Friendly',
       description:
         'Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore erat amet',
     },
     {
-      icon: 'verified',
+      icon: 'certificate',
       title: 'Sustainable Material',
       description:
         'Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor eirmod magna dolore erat amet',

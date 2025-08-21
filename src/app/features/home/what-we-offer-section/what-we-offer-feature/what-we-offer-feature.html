@@ -4,7 +4,7 @@
          [attr.aria-labelledby]="'feature-' + index() + '-title'">
     <div class="w-12 h-12 rounded-full bg-gradient-to-br from-cyan-600 to-teal-600 text-white flex items-center justify-center text-xl shadow-[0_4px_10px_-2px_rgba(0,0,0,0.25)] mx-auto"
          aria-hidden="true">
-        <span class="material-icons">{{ f.icon }}</span>
+        <i class="fa-solid fa-{{ f.icon }}"></i>
     </div>
     <h3 class="mt-4 text-center text-lg font-semibold text-cyan-900 group-hover:text-cyan-700"
         [id]="'feature-' + index() + '-title'">{{ f.title }}</h3>

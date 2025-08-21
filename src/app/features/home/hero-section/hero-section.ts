@@ -15,7 +15,7 @@ import { RouterLink } from '@angular/router';
   styleUrl: './hero-section.scss',
 })
 export class HeroSection {
-  currentImage = 'hero/default.jpg';
+  currentImage = 'hero/default.webp';
   currentIndex = 0;
 
   private cdr = inject(ChangeDetectorRef);
@@ -23,9 +23,9 @@ export class HeroSection {
 
   protected backgroundImages!: string[];
   protected mockBackgroundImages: string[] = [
-    'hero/hero1.jpg',
-    'hero/hero2.jpg',
-    'hero/hero3.jpg',
+    'hero/hero1.webp',
+    'hero/hero2.webp',
+    'hero/hero3.webp',
   ];
   constructor() {
     afterNextRender(() => {

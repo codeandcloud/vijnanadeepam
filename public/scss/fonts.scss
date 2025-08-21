@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Space+Grotesk:wght@300..700&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
 $font-weights: (
-  300: 300,
   400: 400,
   500: 500,
   600: 600,
   700: 700,
+  800: 800,
+  900: 900,
 );
 
 @mixin font-maker($font_name, $weight) {
@@ -13,18 +13,20 @@ $font-weights: (
   font-optical-sizing: auto;
   font-weight: $weight;
   font-style: normal;
-  font-variation-settings: "wdth" 100;
 }
 
 @each $name, $weight in $font-weights {
-  .open-sans-#{$name} {
-    @include font-maker("Open Sans", $weight);
+  .source-sans-#{$name} {
+    @include font-maker("Source Sans 3", $weight);
   }
-  .space-grotesk-#{$name} {
-    @include font-maker("Space Grotesk", $weight);
+  .playfair-display-#{$name} {
+    @include font-maker("Playfair Display", $weight);
   }
 }
 
-.open-sans-800 {
-  @include font-maker("Open Sans", 800);
+.source-sans-200 {
+  @include font-maker("Source Sans 3", 200);
+}
+.source-sans-300 {
+  @include font-maker("Source Sans 3", 300);
 }

@@ -1,6 +1,6 @@
-<button mat-icon-button
-        matTooltip="Toggle dark and light theme"
+<button class="theme-toggle-btn"
+        title="Toggle dark and light theme"
         (click)="toggleTheme()"
         aria-label="Toggle dark and light theme">
-    <span class="material-icons">{{ themeIcon() }}</span>
+    <i class="fas {{ themeIcon() }}"></i>
 </button>

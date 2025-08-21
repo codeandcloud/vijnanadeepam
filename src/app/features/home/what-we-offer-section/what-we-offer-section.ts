@@ -17,7 +17,7 @@ export class WhatWeOfferSection {
         'Curated narration of textbooks and reference material in clear, high‑quality audio.',
     },
     {
-      icon: 'accessibility_new',
+      icon: 'eye',
       title: 'Accessible Lessons',
       description:
         'Structured learning resources designed with screen reader friendly semantics.',
@@ -29,7 +29,7 @@ export class WhatWeOfferSection {
         'Peer and mentor interaction fostering confidence and collaborative growth.',
     },
     {
-      icon: 'school',
+      icon: 'graduation-cap',
       title: 'Scholarships',
       description:
         'Guidance and assistance to connect learners with funding opportunities.',

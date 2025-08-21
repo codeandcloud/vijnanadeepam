@@ -1,32 +1,19 @@
-<section class="hero full-bleed hero-container"
-         aria-labelledby="hero-heading"
+<section class="hero"
          style="background-image: url('{{ currentImage  }}')">
-    <div class="full-bleed">
-        <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-28 md:py-40 text-center text-white">
-            <h1 id="hero-heading"
-                class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-tight">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <div class="hero-data">
+            <h1>
                 Inclusive Learning Without Barriers
             </h1>
-            <p class="mt-6 max-w-3xl mx-auto text-base sm:text-lg md:text-xl font-medium text-cyan-100/90">
+            <p>
                 Empowering visually impaired learners with accessible audio lessons, structured resources, and a
-                supportive
-                community.
+                supportive community.
             </p>
-            <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center"
-                 aria-label="Primary actions">
-                <a routerLink="/about-us"
-                   class="inline-flex items-center justify-center rounded-full bg-white text-cyan-900 font-semibold px-8 py-3 text-sm sm:text-base shadow focus:outline-none focus-visible:ring-4 focus-visible:ring-white/70 transition hover:shadow-md">
-                    Learn More
-                    <span class="material-icons ml-2"
-                          aria-hidden="true">arrow_forward</span>
-                </a>
-                <a routerLink="/contact-us"
-                   class="inline-flex items-center justify-center rounded-full bg-cyan-700/30 backdrop-blur text-white border border-cyan-300/30 font-semibold px-8 py-3 text-sm sm:text-base focus:outline-none focus-visible:ring-4 focus-visible:ring-cyan-200 transition hover:bg-cyan-700/40">
-                    Get Involved
-                    <span class="material-icons ml-2"
-                          aria-hidden="true">diversity_1</span>
-                </a>
-            </div>
+            <a routerLink="/about-us">
+                <span>Learn More</span>
+                <i class="fa-solid fa-arrow-right ms-2"></i>
+            </a>
         </div>
     </div>
 </section>

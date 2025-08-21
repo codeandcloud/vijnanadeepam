@@ -1,40 +1,24 @@
 import {
   afterNextRender,
-  ChangeDetectorRef,
   Component,
   inject,
   OnDestroy,
   OnInit,
   signal,
-  viewChild,
 } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-
-import { MatButtonModule } from '@angular/material/button';
-import { MatMenuModule, MatMenuTrigger } from '@angular/material/menu';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatTooltipModule } from '@angular/material/tooltip';
+import { CommonModule } from '@angular/common';
 
 import { SiteMenu } from '../../core/services/site-menu';
 import { MenuItem } from '../../interfaces/menu-item';
+import { MenuToggler } from '../menu-toggler/menu-toggler';
 
 import { environment } from '../../../environments/environment';
 import { debounceTime, fromEvent, Subscription } from 'rxjs';
 
 @Component({
   selector: 'vd-header',
-  imports: [
-    RouterLink,
-    RouterLinkActive,
-    MatButtonModule,
-    MatIconModule,
-    MatListModule,
-    MatMenuModule,
-    MatToolbarModule,
-    MatTooltipModule,
-  ],
+  imports: [RouterLink, RouterLinkActive, CommonModule, MenuToggler],
   templateUrl: './header.html',
   styleUrls: ['./header.scss'],
 })
@@ -43,27 +27,19 @@ export class Header implements OnInit, OnDestroy {
   protected readonly title = environment.app.title;
 
   public isMenuCollapsed = true;
+  public isMobileMenuOpen = false;
   private menuService = inject(SiteMenu);
   protected menuItems: MenuItem[] = [];
   protected currentOpenMenu = signal<string | null>(null);
   protected isDark = signal<boolean>(false);
 
-  private cdr = inject(ChangeDetectorRef);
-
   #resizeSubscription: Subscription | null = null;
-
-  private trigger = viewChild<MatMenuTrigger>('mobileMenuTrigger');
+  #documentClickSubscription: Subscription | null = null;
 
   constructor() {
     afterNextRender(() => {
-      this.#resizeSubscription = fromEvent(window, 'resize')
-        .pipe(debounceTime(200))
-        .subscribe(() => {
-          const width = window.innerWidth;
-          if (width > this.#MOBILE_MENU_BREAKPOINT) {
-            this.trigger()?.closeMenu();
-          }
-        });
+      this.#onResize();
+      this.#onDocumentClick();
     });
   }
 
@@ -73,6 +49,7 @@ export class Header implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.#resizeSubscription?.unsubscribe();
+    this.#documentClickSubscription?.unsubscribe();
   }
 
   #loadMenuItems = (): void => {
@@ -84,8 +61,29 @@ export class Header implements OnInit, OnDestroy {
   onMenuOpen(label: string) {
     this.currentOpenMenu.set(label);
   }
+
   onMenuClose(label: string) {
     if (this.currentOpenMenu() === label) this.currentOpenMenu.set(null);
+  }
+
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  closeMobileMenu() {
+    this.isMobileMenuOpen = false;
+  }
+
+  toggleDropdown(menuLabel: string) {
+    if (this.currentOpenMenu() === menuLabel) {
+      this.currentOpenMenu.set(null);
+    } else {
+      this.currentOpenMenu.set(menuLabel);
+    }
+  }
+
+  closeDropdown() {
+    this.currentOpenMenu.set(null);
   }
 
   toggleTheme() {
@@ -94,4 +92,28 @@ export class Header implements OnInit, OnDestroy {
     if (this.isDark()) root.classList.add('dark-theme');
     else root.classList.remove('dark-theme');
   }
+
+  #onResize = () => {
+    this.#resizeSubscription = fromEvent(window, 'resize')
+      .pipe(debounceTime(200))
+      .subscribe(() => {
+        const width = window.innerWidth;
+        if (width > this.#MOBILE_MENU_BREAKPOINT) {
+          this.isMobileMenuOpen = false;
+        }
+      });
+  };
+
+  #onDocumentClick = () => {
+    this.#documentClickSubscription = fromEvent(document, 'click').subscribe(
+      (event: Event) => {
+        const target = event.target as HTMLElement;
+        const headerElement = target.closest('header');
+
+        if (!headerElement && this.currentOpenMenu()) {
+          this.currentOpenMenu.set(null);
+        }
+      }
+    );
+  };
 }

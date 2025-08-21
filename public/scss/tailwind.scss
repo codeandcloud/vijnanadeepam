@@ -1,14 +1,10 @@
 @use "tailwindcss";
 
 @layer components {
-  .vd-container {
-    @apply w-full px-4 md:px-8 max-w-7xl mx-auto;
-  }
-  .vd-footer {
-    @apply bg-gradient-to-br from-cyan-950 via-cyan-900 to-teal-950 opacity-95 p-4 text-neutral-400;
+  .vd-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-serif font-bold mb-6;
   }
   .vd-subheading {
-    @apply text-cyan-900 text-center text-2xl sm:text-3xl font-normal tracking-tight leading-tight;
-    font-family: "Space Grotesk", sans-serif;
+    @apply text-lg max-w-2xl mx-auto;
   }
 }
